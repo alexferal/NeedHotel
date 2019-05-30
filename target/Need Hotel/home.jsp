@@ -14,19 +14,32 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
+
         <div style="position: absolute; z-index: 999;">
             <a href="#" data-target="slide-out" class="sidenav-trigger">
-                <i class="medium material-icons black-text">menu</i>
+                <i class="medium material-icons white-text">menu</i>
             </a>
             <ul id="slide-out" class="sidenav">
                 <li><a href="#!"><i class="material-icons">home</i>Home</a></li>
                 <li><a href="#!"><i class="material-icons">info</i>Sobre</a></li>
             </ul>
-
         </div>
+
+        <nav>
+            <div class="nav-wrapper black">
+                <a href="#" class="brand-logo center">Need Hotel</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#">Usuário</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
 
         <div class="carousel carousel-slider center row">
             <div class="carousel-fixed-item center">
+
                 <%--        Elemento fixo ao centro do slide        --%>
                 <form class="col s8 offset-s2 white row" style="border-radius: 10px;">
                     <input class="col s10" type="text" placeholder="Cidades, Hoteis, ...">
@@ -34,14 +47,18 @@
                 </form>
 
             </div>
-            <div class="carousel-item red col s12">
-            </div>
-            <div class="carousel-item amber col s12">
-            </div>
-            <div class="carousel-item green col s12">
-            </div>
-            <div class="carousel-item blue col s12">
-            </div>
+            <a class="carousel-item">
+                <img src="imagem/natal.jpg">
+            </a>
+            <a class="carousel-item">
+                <img src="imagem/riodejaneiro.jpg">
+            </a>
+            <a class="carousel-item">
+                <img src="imagem/curitiba.jpg">
+            </a>
+            <a class="carousel-item">
+                <img src="imagem/recife.jpg">
+            </a>
         </div>
 
 
@@ -50,7 +67,8 @@
         <%--    div dos slides do cabeçário    --%>
         <div class="row" >
             <div class="col s4">
-                <p>tástândo</p>
+                <p>tástândo, ta funcionando essa merda? hã? n1233nnn</p>
+                <input type="text" class="datepicker">
             </div>
         </div>
 
@@ -69,6 +87,17 @@
                 indicators: true
             });
         </script>
+    <script>
+        $(document).ready(function(){
+            $('.datepicker').datepicker({
+                i18n: {
+                    cancel: 'Cancelar',
+                    clear: 'Limpar',
+                    done: 'Ok'
+                }
+            });
+        });
+    </script>
 
     </body>
 </html>
