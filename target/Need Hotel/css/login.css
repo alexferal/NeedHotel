@@ -1,0 +1,31 @@
+#loginTitle{
+    text-align: center;
+    font-size: 30px;
+}
+
+.card{
+    text-align:center;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+#CopyRight{
+    text-align: left;
+    margin-left: 20px;
+}
+
+.modal {
+    width: 75% !important ;
+    height: 75% !important ;
+}
