@@ -68,7 +68,6 @@
         <div class="row" >
             <div class="col s4">
                 <p>tástândo, ta funcionando essa merda? hã? n1233nnn</p>
-                <input type="text" class="datepicker">
             </div>
         </div>
 
@@ -87,17 +86,6 @@
                 indicators: true
             });
         </script>
-    <script>
-        $(document).ready(function(){
-            $('.datepicker').datepicker({
-                i18n: {
-                    cancel: 'Cancelar',
-                    clear: 'Limpar',
-                    done: 'Ok'
-                }
-            });
-        });
-    </script>
 
     </body>
 </html>

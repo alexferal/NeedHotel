@@ -1,14 +1,15 @@
 package com.needhotel.modelo;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Usuario {
 
-    private Long cpf;
+    private String cpf;
     private String nome;
     private String sobreNome;
-    private Long telefone;
-    private Date dataNascimento;
+    private String telefone;
+    private LocalDate dataNascimento;
     private String email;
     private String senha;
 
@@ -19,7 +20,7 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public Usuario(Long cpf, String nome, String sobreNome, Long telefone, Date dataNascimento, String email, String senha) {
+    public Usuario(String cpf, String nome, String sobreNome, String telefone, LocalDate dataNascimento, String email, String senha) {
         this.cpf = cpf;
         this.nome = nome;
         this.sobreNome = sobreNome;
@@ -29,11 +30,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public Long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(Long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -53,19 +54,19 @@ public class Usuario {
         this.sobreNome = sobreNome;
     }
 
-    public Long getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(Long telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

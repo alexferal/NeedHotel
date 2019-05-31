@@ -35,7 +35,22 @@ public class UsuarioDAOBD implements UsuarioDAO {
     }
 
     @Override
-    public Boolean cadastro(Usuario usuario) {
-        return null;
+    public Boolean cadastrarUsuario(Usuario usuario) throws SQLException {
+
+        PreparedStatement statement = this.conexao.prepareStatement(
+                "INSERT INTO usuarios (cpf, nome, sobreNome, telefone, dataNascimento, email, senha) VALUES (?,?,?,?,?,?,?) ");
+        statement.setString(1, usuario.getCpf());
+        statement.setString(2, usuario.getNome());
+        statement.setString(3, usuario.getSobreNome());
+        statement.setString(4, usuario.getTelefone());
+        statement.setDate(5, Date.valueOf(usuario.getDataNascimento()));
+        statement.setString(6, usuario.getEmail());
+        statement.setString(7, usuario.getSenha());
+
+         return statement.executeUpdate() > 0;
     }
+
 }
+
+
+
