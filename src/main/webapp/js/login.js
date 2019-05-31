@@ -22,3 +22,26 @@ $(document).ready(function(){
         format: 'dd/mm/yyyy'
     });
 });
+
+
+$("#senha").on("focusout", function (e) {
+    if ($("#senha").val() != $("#ConSenha").val()) {
+        $("#ConSenha").removeClass("valid").addClass("invalid");
+    } else {
+        $("#ConSenha").removeClass("invalid").addClass("valid");
+    }
+});
+
+$("#ConSenha").on("keyup", function (e) {
+    if ($("#senha").val() != $("#ConSenha").val()) {
+        $(this).removeClass("valid").addClass("invalid");
+    } else {
+        $(this).removeClass("invalid").addClass("valid");
+    }
+});
+
+
+
+
+
+
