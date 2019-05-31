@@ -1,12 +1,27 @@
 package com.needhotel.controle;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
+@WebServlet("/logout")
 public class LogoutServlet extends HttpServlet {
 
-    public void doPost (HttpServletRequest req, HttpServletResponse resp){
+    protected void doPost (HttpServletRequest req, HttpServletResponse resp){
+        System.out.println("aaaaa");
+        HttpSession session = req.getSession();
+        session.invalidate();
 
+        try {
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

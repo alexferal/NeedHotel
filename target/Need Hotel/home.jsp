@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
     <head>
         <title>Need Hotel</title>
@@ -29,8 +30,9 @@
             <div class="nav-wrapper black">
                 <a href="#" class="brand-logo center">Need Hotel</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#">Usuário</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="#">Olá, <c:out value="${usuarioLogado.nome}"/></a></li>
+
+                        <li><form action="logout" method="post"><button class="waves-effect waves-teal btn-flat" href="#" type="submit" name="action">Logout</button></form></li>
                 </ul>
             </div>
         </nav>
@@ -65,11 +67,6 @@
 
 
         <%--    div dos slides do cabeçário    --%>
-        <div class="row" >
-            <div class="col s4">
-                <p>tástândo, ta funcionando essa merda? hã? n1233nnn</p>
-            </div>
-        </div>
 
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

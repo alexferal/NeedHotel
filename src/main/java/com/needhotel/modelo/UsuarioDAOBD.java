@@ -14,25 +14,22 @@ public class UsuarioDAOBD implements UsuarioDAO {
     }
 
     @Override
-    public Boolean autenticacao(String login, String senha) {
+    public Boolean autenticacao(String login, String senha) throws SQLException {
 
-        try{
-            PreparedStatement statement = this.conexao.prepareStatement(
-                    "SELECT email, senha FROM usuario WHERE email = ? AND senha = ?"
-            );
-            statement.setString(1, login);
-            statement.setString(2,senha);
+        PreparedStatement statement = this.conexao.prepareStatement(
+                "SELECT email, senha FROM usuario WHERE email = ? AND senha = ?"
+        );
+        statement.setString(1, login);
+        statement.setString(2,senha);
 
-            ResultSet resultSet = statement.executeQuery();
+        ResultSet resultSet = statement.executeQuery();
 
-            return resultSet.next();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
-        return null;
+        return resultSet.next();
 
     }
+
+
 
     @Override
     public Boolean cadastrarUsuario(Usuario usuario) throws SQLException {
@@ -48,6 +45,30 @@ public class UsuarioDAOBD implements UsuarioDAO {
         statement.setString(7, usuario.getSenha());
 
          return statement.executeUpdate() > 0;
+    }
+
+    @Override
+    public Usuario getUsuario(String email) throws SQLException {
+        PreparedStatement statement = this.conexao.prepareStatement(
+                "SELECT * FROM usuario WHERE email = ?"
+        );
+        statement.setString(1, email);
+
+        ResultSet resultSet = statement.executeQuery();
+        resultSet.next();
+
+        Usuario usuario = new Usuario(
+                resultSet.getString("cpf"),
+                resultSet.getString("nome"),
+                resultSet.getString("sobreNome"),
+                resultSet.getString("telefone"),
+                resultSet.getDate("dataNascimento").toLocalDate(),
+                resultSet.getString("email"),
+                resultSet.getString("senha")
+
+        );
+
+        return usuario;
     }
 
 }

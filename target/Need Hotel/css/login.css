@@ -29,3 +29,8 @@ main {
     width: 75% !important ;
     height: 75% !important ;
 }
+
+.modal-content, #divModal {
+    padding-bottom:0px !important;
+    margin-bottom: 0px !important;
+}

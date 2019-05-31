@@ -12,14 +12,16 @@
                 <div class="row">
                     <div class="col s5 m6">
                         <div class="card blue-grey darken-1">
+                            <form action="login" method="post">
                             <div class="card-content white-text">
                                 <span class="card-title" id="loginTitle">Login</span>
-                                <input placeholder="Email" id="lognome" type="email" class="validate" name="logEmail">
-                                <input placeholder="Senha" id="logsenha" type="password" class="validate" name="logSenha">
+                                    <input placeholder="Email" id="lognome" type="email" class="validate" name="logEmail">
+                                    <input placeholder="Senha" id="logsenha" type="password" class="validate" name="logSenha">
                             </div>
                             <div class="card-action">
-                                <a href="#" id="entrar">Entrar</a>
+                                <button href="#" id="entrar" type="submited" name="action" class="waves-effect waves-teal btn-flat">Entrar</button>
                             </div>
+                            </form>
                             <label class="white-text col s6 offset-s7">Ainda não é cadastrado? <a href="#modal1" class="modal-trigger">Entrar</a></label>
                         </div>
                     </div>
