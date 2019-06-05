@@ -43,7 +43,6 @@ public class CadastroServlet extends HttpServlet {
             Usuario usuario = (Usuario)session.getAttribute("firstRegister");
             usuario.setEmail(req.getParameter("email"));
             usuario.setSenha(req.getParameter("senha"));
-            System.out.println(usuario.toString());
             try {
                 usuarioDAOBD.cadastrarUsuario(usuario);
                 req.getRequestDispatcher("login.jsp").forward(req, resp);

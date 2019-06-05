@@ -6,24 +6,28 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <meta charset="UTF-8"/>
     </head>
-    <body>
+    <body  class="blue lighten-4">
         <main>
             <div class="container">
-                <div class="row">
-                    <div class="col s5 m6">
-                        <div class="card blue-grey darken-1">
-                            <form action="login" method="post">
-                            <div class="card-content white-text">
+                <div class="row center">
+                    <div class="card white">
+                        <form action="login" method="post">
+                            <div class="card-content black-text">
                                 <span class="card-title" id="loginTitle">Login</span>
-                                    <input placeholder="Email" id="lognome" type="email" class="validate" name="logEmail">
-                                    <input placeholder="Senha" id="logsenha" type="password" class="validate" name="logSenha">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">email</i>
+                                    <input id="lognome" type="email" class="validate" name="logEmail">
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">lock</i>
+                                    <input id="logsenha" type="password" class="validate" name="logSenha" >
+                                    <label for="senha">Senha</label>
+                                </div>
+                                <button id="entrar" type="submited" name="action" class="btn waves-effect waves-teal btn-flat blue lighten-4">Entrar</button>
                             </div>
-                            <div class="card-action">
-                                <button href="#" id="entrar" type="submited" name="action" class="waves-effect waves-teal btn-flat">Entrar</button>
-                            </div>
-                            </form>
-                            <label class="white-text col s6 offset-s7">Ainda não é cadastrado? <a href="cadastro.jsp">Entrar</a></label>
-                        </div>
+                        </form>
+                        <label class="black-text center">Ainda não é cadastrado? <a href="cadastro.jsp">Entrar</a></label>
                     </div>
                 </div>
             </div>
