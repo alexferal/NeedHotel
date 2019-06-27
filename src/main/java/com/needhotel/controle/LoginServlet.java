@@ -27,17 +27,15 @@ public class LoginServlet extends HttpServlet {
         String senha = req.getParameter("logSenha");
 
         try {
-            if (usuarioDAOBD.autenticacao(email, senha)){
-                Usuario usuario = usuarioDAOBD.getUsuario(email);
+            Usuario user = usuarioDAOBD.autenticacao(email, senha);
+            if (user != null){
                 HttpSession session = req.getSession();
-                session.setAttribute("usuarioLogado", usuario);
+                session.setAttribute("usuarioLogado", user);
                 req.getRequestDispatcher("home.jsp").forward(req, resp);
             } else {
                 req.setAttribute("statusAutenticacao", "Dados inválidos!");
                 req.getRequestDispatcher("login.jsp").forward(req, resp);
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

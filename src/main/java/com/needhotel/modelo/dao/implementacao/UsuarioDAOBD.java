@@ -5,7 +5,6 @@ import com.needhotel.modelo.conexao.ConnectionFactory;
 import com.needhotel.modelo.dao.interfaces.UsuarioDAO;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +17,7 @@ public class UsuarioDAOBD implements UsuarioDAO {
     }
 
     @Override
-    public Boolean autenticacao(String login, String senha){
+    public Usuario autenticacao(String login, String senha){
         String query = "SELECT email, senha FROM usuario WHERE email = ? AND senha = ?";
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
@@ -26,14 +25,24 @@ public class UsuarioDAOBD implements UsuarioDAO {
             statement.setString(2,senha);
 
             ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
 
+            Usuario usuario = new Usuario(
+                    resultSet.getString("cpf"),
+                    resultSet.getString("nome"),
+                    resultSet.getString("sobreNome"),
+                    resultSet.getString("telefone"),
+                    resultSet.getDate("dataNascimento").toLocalDate(),
+                    resultSet.getString("email"),
+                    resultSet.getString("senha")
 
-            return resultSet.next();
+            );
+            return usuario;
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return false;
+        return null;
     }
 
 
@@ -56,36 +65,6 @@ public class UsuarioDAOBD implements UsuarioDAO {
             e.printStackTrace();
         }
         return false;
-
-    }
-
-    @Override
-    public Usuario buscarUsuario(String cpf){
-        String query = "SELECT * FROM usuario WHERE cpf = ?";
-        try(Connection connection = factory.getConnection()){
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, cpf);
-
-            ResultSet resultSet = statement.executeQuery();
-            resultSet.next();
-
-            Usuario usuario = new Usuario(
-                    resultSet.getString("cpf"),
-                    resultSet.getString("nome"),
-                    resultSet.getString("sobreNome"),
-                    resultSet.getString("telefone"),
-                    resultSet.getDate("dataNascimento").toLocalDate(),
-                    resultSet.getString("email"),
-                    resultSet.getString("senha")
-
-            );
-
-            return usuario;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return null;
 
     }
 

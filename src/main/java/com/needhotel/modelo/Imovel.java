@@ -1,8 +1,8 @@
-package com.needhotel.modelo.dao;
+package com.needhotel.modelo;
 
 import java.time.ZonedDateTime;
 
-public class imovel {
+public class Imovel {
     private String id;
     private String proprietario;
     private String nome;
@@ -15,7 +15,7 @@ public class imovel {
     private Float valor;
     private boolean disponibilidade;
 
-    public imovel(String proprietario, String nome, String rua, String bairro, String numero, String cep, String cidade, String estado, Float valor, boolean disponibilidade) {
+    public Imovel(String proprietario, String nome, String rua, String bairro, String numero, String cep, String cidade, String estado, Float valor, boolean disponibilidade) {
         id = String.valueOf(ZonedDateTime.now().toInstant().getEpochSecond());
         this.proprietario = proprietario;
         this.nome = nome;
