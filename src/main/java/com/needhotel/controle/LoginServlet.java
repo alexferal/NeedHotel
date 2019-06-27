@@ -1,7 +1,7 @@
 package com.needhotel.controle;
 
 import com.needhotel.modelo.Usuario;
-import com.needhotel.modelo.UsuarioDAOBD;
+import com.needhotel.modelo.dao.implementacao.UsuarioDAOBD;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

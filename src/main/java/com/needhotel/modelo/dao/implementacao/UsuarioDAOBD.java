@@ -1,0 +1,159 @@
+package com.needhotel.modelo.dao.implementacao;
+
+import com.needhotel.modelo.Usuario;
+import com.needhotel.modelo.conexao.ConnectionFactory;
+import com.needhotel.modelo.dao.interfaces.UsuarioDAO;
+
+import java.sql.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class UsuarioDAOBD implements UsuarioDAO {
+
+    private ConnectionFactory factory;
+
+    public UsuarioDAOBD() {
+        factory = new ConnectionFactory();
+    }
+
+    @Override
+    public Boolean autenticacao(String login, String senha){
+        String query = "SELECT email, senha FROM usuario WHERE email = ? AND senha = ?";
+        try(Connection connection = factory.getConnection()){
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, login);
+            statement.setString(2,senha);
+
+            ResultSet resultSet = statement.executeQuery();
+
+
+            return resultSet.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+
+
+    @Override
+    public Boolean cadastrarUsuario(Usuario usuario) {
+        String query = "INSERT INTO usuario (cpf, nome, sobreNome, telefone, dataNascimento, email, senha) VALUES (?,?,?,?,?,?,?)";
+        try(Connection connection = factory.getConnection()){
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, usuario.getCpf());
+            statement.setString(2, usuario.getNome());
+            statement.setString(3, usuario.getSobreNome());
+            statement.setString(4, usuario.getTelefone());
+            statement.setDate(5, Date.valueOf(usuario.getDataNascimento()));
+            statement.setString(6, usuario.getEmail());
+            statement.setString(7, usuario.getSenha());
+
+            return statement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+
+    }
+
+    @Override
+    public Usuario buscarUsuario(String cpf){
+        String query = "SELECT * FROM usuario WHERE cpf = ?";
+        try(Connection connection = factory.getConnection()){
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, cpf);
+
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+
+            Usuario usuario = new Usuario(
+                    resultSet.getString("cpf"),
+                    resultSet.getString("nome"),
+                    resultSet.getString("sobreNome"),
+                    resultSet.getString("telefone"),
+                    resultSet.getDate("dataNascimento").toLocalDate(),
+                    resultSet.getString("email"),
+                    resultSet.getString("senha")
+
+            );
+
+            return usuario;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+
+    }
+
+
+    @Override
+    public Boolean deletarUsuario(String cpf) {
+        String query = "DELETE FROM usuario WHERE cpf = ? ";
+        try(Connection connection = factory.getConnection()){
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, cpf);
+            return statement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    @Override
+    public Boolean atualizarUsuario(String cpf, Usuario usuario) {
+        String query = "UPDATE usuario SET cpf = ?, nome = ?, sobrenome = ?, telefone = ?, datanascimento = ?, " +
+                "email = ?, senha = ? WHERE cpf = ?";
+        try(Connection connection = factory.getConnection()){
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, usuario.getCpf());
+            statement.setString(2, usuario.getNome());
+            statement.setString(3, usuario.getSobreNome());
+            statement.setString(4, usuario.getTelefone());
+            statement.setDate(5, Date.valueOf(usuario.getDataNascimento()));
+            statement.setString(6, usuario.getEmail());
+            statement.setString(7, usuario.getSenha());
+            statement.setString(8, cpf);
+
+            return statement.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    @Override
+    public List<Usuario> getUsuarios() {
+        String query = "SELECT * FROM usuario";
+        List<Usuario> usuarios = new ArrayList<>();
+        try(Connection connection = factory.getConnection()){
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()){
+                usuarios.add(new Usuario(
+                        resultSet.getString("cpf"), resultSet.getString("nome"),
+                        resultSet.getString("sobrenome"), resultSet.getString("telefone"),
+                        resultSet.getDate("dataNascimento").toLocalDate(), resultSet.getString("email"),
+                        resultSet.getString("senha")
+                ));
+            }
+            return usuarios;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+
+}
+
+
+

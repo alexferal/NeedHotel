@@ -1,8 +1,7 @@
 package com.needhotel.controle;
 
 import com.needhotel.modelo.Usuario;
-import com.needhotel.modelo.UsuarioDAO;
-import com.needhotel.modelo.UsuarioDAOBD;
+import com.needhotel.modelo.dao.implementacao.UsuarioDAOBD;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 @WebServlet("/cadastrar")

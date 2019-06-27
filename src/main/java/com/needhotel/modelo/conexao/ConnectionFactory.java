@@ -12,9 +12,6 @@ public class ConnectionFactory {
 
     public static String password = "1234";
 
-    public ConnectionFactory() {
-    }
-
     public Connection getConnection() {
         Connection connection = null;
 
