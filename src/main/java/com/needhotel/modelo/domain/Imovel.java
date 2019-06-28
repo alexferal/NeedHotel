@@ -1,6 +1,8 @@
-package com.needhotel.modelo;
+package com.needhotel.modelo.domain;
 
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Imovel {
     private String id;
@@ -14,6 +16,10 @@ public class Imovel {
     private String estado;
     private Float valor;
     private boolean disponibilidade;
+    private List<String> fotos;
+
+    public Imovel() {
+    }
 
     public Imovel(String proprietario, String nome, String rua, String bairro, String numero, String cep, String cidade, String estado, Float valor, boolean disponibilidade) {
         id = String.valueOf(ZonedDateTime.now().toInstant().getEpochSecond());
@@ -27,6 +33,7 @@ public class Imovel {
         this.estado = estado;
         this.valor = valor;
         this.disponibilidade = disponibilidade;
+        fotos = new ArrayList<>();
     }
 
     public String getId() {
@@ -115,5 +122,13 @@ public class Imovel {
 
     public void setDisponibilidade(boolean disponibilidade) {
         this.disponibilidade = disponibilidade;
+    }
+
+    public List<String> getFotos() {
+        return fotos;
+    }
+
+    public void setFotos(List<String> fotos) {
+        this.fotos = fotos;
     }
 }
