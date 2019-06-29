@@ -1,6 +1,6 @@
 package com.needhotel.modelo.dao.interfaces;
 
-import com.needhotel.modelo.Usuario;
+import com.needhotel.modelo.domain.Usuario;
 
 import java.util.List;
 

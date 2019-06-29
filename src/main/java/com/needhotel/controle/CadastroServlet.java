@@ -1,7 +1,7 @@
 package com.needhotel.controle;
 
-import com.needhotel.modelo.Usuario;
-import com.needhotel.modelo.dao.implementacao.UsuarioDAOBD;
+import com.needhotel.modelo.domain.Usuario;
+import com.needhotel.modelo.dao.implementacao.UsuarioDaoImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +22,7 @@ public class CadastroServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        UsuarioDAOBD usuarioDAOBD = new UsuarioDAOBD();
+        UsuarioDaoImpl usuarioDaoImpl = new UsuarioDaoImpl();
         HttpSession session = req.getSession();
 
         if (session.getAttribute("firstRegister") == null){
@@ -41,15 +41,8 @@ public class CadastroServlet extends HttpServlet {
             Usuario usuario = (Usuario)session.getAttribute("firstRegister");
             usuario.setEmail(req.getParameter("email"));
             usuario.setSenha(req.getParameter("senha"));
-            try {
-                usuarioDAOBD.cadastrarUsuario(usuario);
-                req.getRequestDispatcher("login.jsp").forward(req, resp);
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-
-
+            usuarioDaoImpl.cadastrarUsuario(usuario);
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
     }
 }

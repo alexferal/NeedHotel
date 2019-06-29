@@ -29,9 +29,18 @@ CREATE TABLE imovel(
 CREATE TABLE comodidade(
     id_imovel VARCHAR(100),
     recurso VARCHAR(200),
-    CONSTRAINT comodidade_pk PRIMARY KEY(id_imovel),
+    CONSTRAINT comodidade_pk PRIMARY KEY(id_imovel, recurso),
     CONSTRAINT id_fk FOREIGN KEY(id_imovel)
         REFERENCES imovel(id)
+
+);
+
+CREATE TABLE foto(
+   id_imovel VARCHAR(100),
+   foto VARCHAR(100),
+   CONSTRAINT comodidade_pk PRIMARY KEY(id_imovel, foto),
+   CONSTRAINT id_fk FOREIGN KEY(id_imovel)
+       REFERENCES imovel(id)
 
 );
 

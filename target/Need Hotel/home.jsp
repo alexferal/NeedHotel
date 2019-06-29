@@ -22,6 +22,8 @@
             </a>
             <ul id="slide-out" class="sidenav">
                 <li><a href="#!"><i class="material-icons">home</i>Home</a></li>
+                <li><a href="#!"><i class="material-icons">home</i>Perfil</a></li>
+                <li><a href="cadastrarImovel"><i class="material-icons">home</i>Cadastrar Imóvel</a></li>
                 <li><a href="#!"><i class="material-icons">info</i>Sobre</a></li>
             </ul>
         </div>

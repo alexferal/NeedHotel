@@ -1,6 +1,6 @@
 package com.needhotel.modelo.dao.implementacao;
 
-import com.needhotel.modelo.Usuario;
+import com.needhotel.modelo.domain.Usuario;
 import com.needhotel.modelo.conexao.ConnectionFactory;
 import com.needhotel.modelo.dao.interfaces.UsuarioDAO;
 
@@ -8,17 +8,17 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsuarioDAOBD implements UsuarioDAO {
+public class UsuarioDaoImpl implements UsuarioDAO {
 
     private ConnectionFactory factory;
 
-    public UsuarioDAOBD() {
+    public UsuarioDaoImpl() {
         factory = new ConnectionFactory();
     }
 
     @Override
     public Usuario autenticacao(String login, String senha){
-        String query = "SELECT email, senha FROM usuario WHERE email = ? AND senha = ?";
+        String query = "SELECT cpf, nome, sobrenome, telefone, datanascimento, email, senha FROM usuario WHERE email = ? AND senha = ?";
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, login);

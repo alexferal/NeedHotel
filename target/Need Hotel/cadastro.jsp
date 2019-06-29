@@ -15,72 +15,72 @@
     <meta charset="UTF-8"/>
     <title>Cadastro</title>
 </head>
-<body class="blue lighten-4">
+<body class="blue-grey darken-1">
     <div >
         <div id="divCadastro" class="container white" >
             <h4>Cadastro</h4>
             <% if(session.getAttribute("firstRegister") == null){%>
 
-            <h6>Dados Pessoais</h6>
-            <form class="center" action="cadastrar" method="post">
-                <div class="row container">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="primeiroNome" type="text" class="validate inputs" name="primeiroNome">
-                        <label for="primeiroNome">Nome</label>
+                <h6>Dados Pessoais</h6>
+                <form class="center" action="cadastrar" method="post">
+                    <div class="row container">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="primeiroNome" type="text" class="validate inputs" name="primeiroNome">
+                            <label for="primeiroNome">Nome</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="sobrenome" type="text" class="validate inputs" name="sobrenome" >
+                            <label for="sobrenome">Sobrenome</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">perm_identity</i>
+                            <input id="cpf" type="text" class="validate inputs" name="cpf">
+                            <label for="cpf">Cpf</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">local_phone</i>
+                            <input id="telefone" type="text" class="validate inputs" name="telefone">
+                            <label for="telefone">Telefone</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">date_range</i>
+                            <input type="text" class="datepicker inputs" placeholder="Data de Nascimento" name="nascimento">
+                        </div>
                     </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="sobrenome" type="text" class="validate inputs" name="sobrenome" >
-                        <label for="sobrenome">Sobrenome</label>
+                    <div class="modal-footer container center">
+                        <a href="login.jsp" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                        <button class="btn waves-effect waves-light" type="submit" name="action" id="btnCadastrar">Próximo</button>
                     </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">perm_identity</i>
-                        <input id="cpf" type="text" class="validate inputs" name="cpf">
-                        <label for="cpf">Cpf</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">local_phone</i>
-                        <input id="telefone" type="text" class="validate inputs" name="telefone">
-                        <label for="telefone">Telefone</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">date_range</i>
-                        <input type="text" class="datepicker inputs" placeholder="Data de Nascimento" name="nascimento">
-                    </div>
-                </div>
-                <div class="modal-footer container center">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
-                    <button class="btn waves-effect waves-light" type="submit" name="action" id="btnCadastrar">Próximo</button>
-                </div>
-            </form>
+                </form>
             <%} else {%>
-            <h6>Conta</h6>
-            <form class="center" action="cadastrar" method="post">
-                <div class="row container">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">email</i>
-                        <input id="email" type="email" class="validate inputs" name="email">
-                        <label for="email">Email</label>
+                <h6>Conta</h6>
+                <form class="center" action="cadastrar" method="post">
+                    <div class="row container">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">email</i>
+                            <input id="email" type="email" class="validate inputs" name="email">
+                            <label for="email">Email</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="senha" type="password" class="validate inputs" name="senha" >
+                            <label for="senha">Senha</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="ConSenha" type="password" class="validate inputs">
+                            <label for="ConSenha">Confirmar senha</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer center">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar</button>
                     </div>
 
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">lock</i>
-                        <input id="senha" type="password" class="validate inputs" name="senha" >
-                        <label for="senha">Senha</label>
-                    </div>
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">lock</i>
-                        <input id="ConSenha" type="password" class="validate inputs">
-                        <label for="ConSenha">Confirmar senha</label>
-                    </div>
-                </div>
-                <div class="modal-footer center">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar</button>
-                </div>
-
-            </form>
+                </form>
             <%}%>
         </div>
     </div>

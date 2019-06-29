@@ -6,9 +6,13 @@
 
 .card{
     text-align:center;
+    border-radius: 15px;
+    padding: 15px;
     position: absolute;
-    top: 25%;
+    top: 20%;
+    bottom: 20%;
     left: 30%;
+    right: 30%;
 }
 
 body {
@@ -24,14 +28,4 @@ main {
 #CopyRight{
     text-align: left;
     margin-left: 20px;
-}
-
-.modal {
-    width: 75% !important ;
-    height: 75% !important ;
-}
-
-.modal-content, #divModal {
-    padding-bottom:0px !important;
-    margin-bottom: 0px !important;
 }
