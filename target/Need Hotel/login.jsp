@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -6,30 +7,27 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <meta charset="UTF-8"/>
     </head>
-    <body  class="blue-grey darken-1">
-        <main>
-            <div class="container">
-                <div class="row center">
-                    <div class="card white">
-                        <form action="login" method="post">
-                            <div class="card-content black-text">
-                                <span class="card-title" id="loginTitle">Login</span>
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">email</i>
-                                    <input id="lognome" type="email" class="validate" name="logEmail">
-                                    <label for="lognome">Email</label>
-                                </div>
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">lock</i>
-                                    <input id="logsenha" type="password" class="validate" name="logSenha" >
-                                    <label for="logsenha">Senha</label>
-                                </div>
-                                <button id="entrar" type="submited" name="action" class="btn waves-effect waves-teal btn-flat blue lighten-4">Entrar</button>
-                            </div>
-                        </form>
-                        <label class="black-text center">Ainda não é cadastrado? <a href="cadastro.jsp">Entrar</a></label>
+    <body class="blue-grey darken-1">
+        <main class="container center row">
+            <div class="col s6 offset-s3 white" style="margin-top: 10%; padding: 15px; border-radius: 15px">
+                <h3>Login</h3>
+                <c:if test="${statusAutenticacao eq 'Erro'}">
+                    <h6 class="red-text"><i class="material-icons tiny">info</i>Email ou senha inválidos!</h6>
+                </c:if>
+                <form action="login" method="post">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                        <input id="lognome" type="email" class="validate" name="logEmail">
+                        <label for="lognome">Email</label>
                     </div>
-                </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">lock</i>
+                        <input id="logsenha" type="password" class="validate" name="logSenha" >
+                        <label for="logsenha">Senha</label>
+                    </div>
+                    <button id="entrar" type="submited" name="action" class="btn waves-effect waves-teal btn-flat blue lighten-4">Entrar</button>
+                </form>
+                <label class="black-text center">Ainda não possui uma conta? <a href="cadastro.jsp">Cadastre-se!</a></label>
             </div>
         </main>
 

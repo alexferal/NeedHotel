@@ -11,8 +11,11 @@ import java.io.IOException;
 @WebServlet("/logout")
 public class LogoutServlet extends HttpServlet {
 
+    protected void doGet (HttpServletRequest req, HttpServletResponse resp){
+        doPost(req, resp);
+    }
+
     protected void doPost (HttpServletRequest req, HttpServletResponse resp){
-        System.out.println("aaaaa");
         HttpSession session = req.getSession();
         session.invalidate();
 

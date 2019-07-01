@@ -18,28 +18,32 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 
     @Override
     public Usuario autenticacao(String login, String senha){
-        String query = "SELECT cpf, nome, sobrenome, telefone, datanascimento, email, senha FROM usuario WHERE email = ? AND senha = ?";
+        String query = "SELECT cpf, nome, sobrenome, telefone, datanascimento, email, senha " +
+                "FROM usuario " +
+                "WHERE email = ? AND senha = ?";
         try(Connection connection = factory.getConnection()){
+
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, login);
             statement.setString(2,senha);
 
             ResultSet resultSet = statement.executeQuery();
-            resultSet.next();
 
-            Usuario usuario = new Usuario(
-                    resultSet.getString("cpf"),
-                    resultSet.getString("nome"),
-                    resultSet.getString("sobreNome"),
-                    resultSet.getString("telefone"),
-                    resultSet.getDate("dataNascimento").toLocalDate(),
-                    resultSet.getString("email"),
-                    resultSet.getString("senha")
+            if (resultSet.next()){
+                Usuario usuario = new Usuario(
+                        resultSet.getString("cpf"),
+                        resultSet.getString("nome"),
+                        resultSet.getString("sobreNome"),
+                        resultSet.getString("telefone"),
+                        resultSet.getDate("dataNascimento").toLocalDate(),
+                        resultSet.getString("email"),
+                        resultSet.getString("senha")
 
-            );
-            return usuario;
+                );
+                return usuario;
+            } else return null;
+
         } catch (SQLException e) {
-            e.printStackTrace();
         }
 
         return null;

@@ -12,6 +12,7 @@
         <title>Need Hotel</title>
         <link href="css/materialize.css" type="text/css" rel="stylesheet"/>
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
+        <link type="text/css" rel="stylesheet" href="css/home.css"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
@@ -21,20 +22,30 @@
                 <i class="medium material-icons white-text">menu</i>
             </a>
             <ul id="slide-out" class="sidenav">
-                <li><a href="#!"><i class="material-icons">home</i>Home</a></li>
-                <li><a href="#!"><i class="material-icons">home</i>Perfil</a></li>
-                <li><a href="cadastrarImovel"><i class="material-icons">home</i>Cadastrar Imóvel</a></li>
-                <li><a href="#!"><i class="material-icons">info</i>Sobre</a></li>
+                <li><div class="user-view">
+                    <div class="background grey darken-3">
+<%--                        <img src="">--%>
+                    </div>
+                    <a href="#user"><img class="circle" src="images/"></a>
+                    <a href="#name"><span class="white-text name userNome">
+                        <c:out value="${usuarioLogado.nome}"/>
+                        <c:out value="${usuarioLogado.sobreNome}"/>
+                    </span></a>
+                </div></li>
+                <li><a href="#!"><i class="material-icons black-text">account_circle</i>Perfil</a></li>
+                <li><a href="cadastrarImovel"><i class="material-icons black-text">add_circle</i>Cadastrar Imóvel</a></li>
+                <li><a href="logout"><i class="material-icons black-text">exit_to_app</i>Logout</a></li>
+                <li><div class="divider"></div></li>
+                <li><a href="#!"><i class="material-icons black-text">home</i>Home</a></li>
+                <li><a href="#!"><i class="material-icons black-text33">info</i>Sobre</a></li>
             </ul>
         </div>
 
         <nav>
             <div class="nav-wrapper black">
                 <a href="#" class="brand-logo center">Need Hotel</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <ul id="nav-mobile" class="right hide-on-med-and-down userNome">
                     <li><a href="#">Olá, <c:out value="${usuarioLogado.nome}"/></a></li>
-
-                        <li><form action="logout" method="post"><button class="waves-effect waves-teal btn-flat" href="#" type="submit" name="action">Logout</button></form></li>
                 </ul>
             </div>
         </nav>

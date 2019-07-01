@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("usuarioLogado", user);
                 req.getRequestDispatcher("home.jsp").forward(req, resp);
             } else {
-                req.setAttribute("statusAutenticacao", "Dados inválidos!");
+                req.setAttribute("statusAutenticacao", "Erro");
                 req.getRequestDispatcher("login.jsp").forward(req, resp);
             }
         } catch (ServletException e) {
