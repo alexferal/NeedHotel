@@ -19,6 +19,7 @@ public class Imovel {
     private List<String> fotos;
 
     public Imovel() {
+        id = String.valueOf(ZonedDateTime.now().toInstant().getEpochSecond());
     }
 
     public Imovel(String proprietario, String nome, String rua, String bairro, String numero, String cep, String cidade, String estado, Float valor, boolean disponibilidade) {
@@ -130,5 +131,23 @@ public class Imovel {
 
     public void setFotos(List<String> fotos) {
         this.fotos = fotos;
+    }
+
+    @Override
+    public String toString() {
+        return "Imovel{" +
+                "id='" + id + '\'' +
+                ", proprietario='" + proprietario + '\'' +
+                ", nome='" + nome + '\'' +
+                ", rua='" + rua + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", numero='" + numero + '\'' +
+                ", cep='" + cep + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", estado='" + estado + '\'' +
+                ", valor=" + valor +
+                ", disponibilidade=" + disponibilidade +
+                ", fotos=" + fotos +
+                '}';
     }
 }

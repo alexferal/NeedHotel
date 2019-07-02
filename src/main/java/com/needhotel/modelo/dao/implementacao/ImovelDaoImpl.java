@@ -37,7 +37,7 @@ public class ImovelDaoImpl implements ImovelDao {
 
     @Override
     public Boolean cadastrarFotosImovel(String imovel, String path) {
-        String query = "INSERT INTO fotosimovel(id_imovel, foto) VALUES (?,?)";
+        String query = "INSERT INTO foto(id_imovel, foto) VALUES (?,?)";
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, imovel);
@@ -53,7 +53,7 @@ public class ImovelDaoImpl implements ImovelDao {
     @Override
     public Boolean deletarImovel(String id) {
         String query = "DELETE FROM imovel WHERE id = ?";
-        String query1 = "DELETE FROM fotosimovel WHERE id_imovel = ?";
+        String query1 = "DELETE FROM foto WHERE id_imovel = ?";
         try (Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             PreparedStatement statement1 = connection.prepareStatement(query1);
@@ -114,7 +114,7 @@ public class ImovelDaoImpl implements ImovelDao {
         return null;
     }
 
-    public List<Imovel> setListaImoveis(ResultSet resultSet) throws SQLException {
+    private List<Imovel> setListaImoveis(ResultSet resultSet) throws SQLException {
         List<Imovel> imoveis = new ArrayList<>();
         while (resultSet.next()){
             Imovel imovel = new Imovel();
@@ -137,7 +137,7 @@ public class ImovelDaoImpl implements ImovelDao {
 
     public List<String> getfotos(String imovel){
         List<String> fotos = new ArrayList<>();
-        String query = "SELECT foto FROM fotosimovel WHERE id_imovel = ?";
+        String query = "SELECT foto FROM foto WHERE id_imovel = ?";
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, imovel);
@@ -153,7 +153,7 @@ public class ImovelDaoImpl implements ImovelDao {
         return null;
     }
 
-    public PreparedStatement setStatement(PreparedStatement statement, Imovel imovel) throws SQLException {
+    private PreparedStatement setStatement(PreparedStatement statement, Imovel imovel) throws SQLException {
         statement.setString(2, imovel.getProprietario());
         statement.setString(3, imovel.getNome());
         statement.setString(4, imovel.getRua());

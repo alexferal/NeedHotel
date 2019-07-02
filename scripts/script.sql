@@ -42,7 +42,7 @@ CREATE TABLE comodidade(
 CREATE TABLE foto(
    id_imovel VARCHAR(100),
    foto VARCHAR(100),
-   CONSTRAINT comodidade_pk PRIMARY KEY(id_imovel, foto),
+   CONSTRAINT foto_pk PRIMARY KEY(id_imovel, foto),
    CONSTRAINT id_fk FOREIGN KEY(id_imovel)
        REFERENCES imovel(id)
 
