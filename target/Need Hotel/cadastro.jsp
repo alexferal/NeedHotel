@@ -60,12 +60,12 @@
             </c:if>
             <c:if test="${etapaFormUser eq '2'}">
                 <h6>Conta</h6>
-                <form class="center" action="cadastrar" method="post">
+                <form class="center" action="cadastrar" method="post" enctype="multipart/form-data">
                     <div class="row container">
                         <div class="file-field input-field col s12">
                             <div class="btn">
                                 <span><i class="material-icons">add_photo</i> </span>
-                                <input type="file" name="fotoPerfil" id="fotoPerfil" accept="image/*">
+                                <input type="file" name="foto" id="foto" accept="image/*">
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text" placeholder="Faça o upload das fotos do imóvel aqui">

@@ -34,12 +34,18 @@ public class CadastroServlet extends HttpServlet {
         doPost(req, resp);
     }
 
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp){
         HttpSession session = req.getSession();
         if (session.getAttribute("etapaFormUser") == null) {
 
             session.setAttribute("etapaFormUser", "1");
-            req.getRequestDispatcher("cadastro.jsp").forward(req, resp);
+            try {
+                req.getRequestDispatcher("cadastro.jsp").forward(req, resp);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         } else {
 
@@ -57,14 +63,20 @@ public class CadastroServlet extends HttpServlet {
 
                 session.setAttribute("firstRegister", usuario);
                 session.setAttribute("etapaFormUser", "2");
-                req.getRequestDispatcher("cadastro.jsp").forward(req, resp);
+                try {
+                    req.getRequestDispatcher("cadastro.jsp").forward(req, resp);
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
             }else if (session.getAttribute("etapaFormUser").equals("2")){
                 Usuario usuario = (Usuario)session.getAttribute("firstRegister");
 
-                if (ServletFileUpload.isMultipartContent(req)){
-                    usuario.setEmail(req.getParameter("email"));
-                    usuario.setSenha(req.getParameter("senha"));
+                usuario.setEmail(req.getParameter("email"));
+                usuario.setSenha(req.getParameter("senha"));
+//                if (ServletFileUpload.isMultipartContent(req)){
 
                     String uploadPath = getServletContext().getRealPath("") + File.separator + "imagem";
                     File uploadDir = new File(uploadPath);
@@ -72,6 +84,7 @@ public class CadastroServlet extends HttpServlet {
                     if (!uploadDir.exists()) uploadDir.mkdir();
 
                     List<String> foto = new ArrayList<>();
+                try {
                     for (Part part : req.getParts()) {
                         if (part.getContentType() != null){
                             String fileName = getFileName(part);
@@ -80,9 +93,22 @@ public class CadastroServlet extends HttpServlet {
                             part.write(uploadPath + File.separator + nomeFoto);
                         }
                     }
-                    usuario.setFotoPerfil(foto.get(0));
-                    usuarioDaoImpl.cadastrarUsuario(usuario);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                }
+                usuario.setFotoPerfil(foto.get(0));
+//                }
+                usuarioDaoImpl.cadastrarUsuario(usuario);
+                session.setAttribute("etapaFormUser", null);
+                try {
                     req.getRequestDispatcher("login.jsp").forward(req, resp);
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
 
             }
