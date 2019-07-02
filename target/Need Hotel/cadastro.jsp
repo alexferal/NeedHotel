@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib
+        prefix="c"
+        uri="http://java.sun.com/jsp/jstl/core"
+%>
 <html>
 <head>
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
@@ -19,8 +23,7 @@
     <div >
         <div id="divCadastro" class="container white" >
             <h4>Cadastro</h4>
-            <% if(session.getAttribute("firstRegister") == null){%>
-
+            <c:if test="${etapaFormUser eq '1'}">
                 <h6>Dados Pessoais</h6>
                 <form class="center" action="cadastrar" method="post">
                     <div class="row container">
@@ -54,10 +57,20 @@
                         <button class="btn waves-effect waves-light" type="submit" name="action" id="btnCadastrar">Próximo</button>
                     </div>
                 </form>
-            <%} else {%>
+            </c:if>
+            <c:if test="${etapaFormUser eq '2'}">
                 <h6>Conta</h6>
                 <form class="center" action="cadastrar" method="post">
                     <div class="row container">
+                        <div class="file-field input-field col s12">
+                            <div class="btn">
+                                <span><i class="material-icons">add_photo</i> </span>
+                                <input type="file" name="fotoPerfil" id="fotoPerfil" accept="image/*">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Faça o upload das fotos do imóvel aqui">
+                            </div>
+                        </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">email</i>
                             <input id="email" type="email" class="validate inputs" name="email">
@@ -81,7 +94,7 @@
                     </div>
 
                 </form>
-            <%}%>
+            </c:if>
         </div>
     </div>
 

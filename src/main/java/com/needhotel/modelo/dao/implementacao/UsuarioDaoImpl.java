@@ -18,7 +18,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 
     @Override
     public Usuario autenticacao(String login, String senha){
-        String query = "SELECT cpf, nome, sobrenome, telefone, datanascimento, email, senha " +
+        String query = "SELECT cpf, nome, sobrenome, telefone, datanascimento, email, senha, foto " +
                 "FROM usuario " +
                 "WHERE email = ? AND senha = ?";
         try(Connection connection = factory.getConnection()){
@@ -37,13 +37,15 @@ public class UsuarioDaoImpl implements UsuarioDAO {
                         resultSet.getString("telefone"),
                         resultSet.getDate("dataNascimento").toLocalDate(),
                         resultSet.getString("email"),
-                        resultSet.getString("senha")
+                        resultSet.getString("senha"),
+                        resultSet.getString("foto")
 
                 );
                 return usuario;
             } else return null;
 
         } catch (SQLException e) {
+            e.printStackTrace();
         }
 
         return null;
@@ -53,7 +55,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 
     @Override
     public Boolean cadastrarUsuario(Usuario usuario) {
-        String query = "INSERT INTO usuario (cpf, nome, sobreNome, telefone, dataNascimento, email, senha) VALUES (?,?,?,?,?,?,?)";
+        String query = "INSERT INTO usuario (cpf, nome, sobreNome, telefone, dataNascimento, email, senha, foto) VALUES (?,?,?,?,?,?,?,?)";
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, usuario.getCpf());
@@ -63,6 +65,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
             statement.setDate(5, Date.valueOf(usuario.getDataNascimento()));
             statement.setString(6, usuario.getEmail());
             statement.setString(7, usuario.getSenha());
+            statement.setString(8, usuario.getFotoPerfil());
 
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -90,7 +93,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
     @Override
     public Boolean atualizarUsuario(String cpf, Usuario usuario) {
         String query = "UPDATE usuario SET cpf = ?, nome = ?, sobrenome = ?, telefone = ?, datanascimento = ?, " +
-                "email = ?, senha = ? WHERE cpf = ?";
+                "email = ?, senha = ?, foto = ? WHERE cpf = ?";
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, usuario.getCpf());
@@ -100,7 +103,8 @@ public class UsuarioDaoImpl implements UsuarioDAO {
             statement.setDate(5, Date.valueOf(usuario.getDataNascimento()));
             statement.setString(6, usuario.getEmail());
             statement.setString(7, usuario.getSenha());
-            statement.setString(8, cpf);
+            statement.setString(8, usuario.getFotoPerfil());
+            statement.setString(9, cpf);
 
             return statement.executeUpdate() > 0;
 
@@ -121,10 +125,14 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 
             while (resultSet.next()){
                 usuarios.add(new Usuario(
-                        resultSet.getString("cpf"), resultSet.getString("nome"),
-                        resultSet.getString("sobrenome"), resultSet.getString("telefone"),
-                        resultSet.getDate("dataNascimento").toLocalDate(), resultSet.getString("email"),
-                        resultSet.getString("senha")
+                        resultSet.getString("cpf"),
+                        resultSet.getString("nome"),
+                        resultSet.getString("sobrenome"),
+                        resultSet.getString("telefone"),
+                        resultSet.getDate("dataNascimento").toLocalDate(),
+                        resultSet.getString("email"),
+                        resultSet.getString("senha"),
+                        resultSet.getString("foto")
                 ));
             }
             return usuarios;

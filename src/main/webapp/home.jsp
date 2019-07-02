@@ -24,13 +24,14 @@
             <ul id="slide-out" class="sidenav">
                 <li><div class="user-view">
                     <div class="background grey darken-3">
-<%--                        <img src="">--%>
+                        <img src="imagem/background.jpg">
                     </div>
-                    <a href="#user"><img class="circle" src="images/"></a>
+                    <a href="#user"><img class="circle" src="imagem/${usuarioLogado.fotoPerfil}"></a>
                     <a href="#name"><span class="white-text name userNome">
                         <c:out value="${usuarioLogado.nome}"/>
                         <c:out value="${usuarioLogado.sobreNome}"/>
                     </span></a>
+                    <a href="#email"><span class="white-text email"><c:out value="${usuarioLogado.email}"/></a>
                 </div></li>
                 <li><a href="#!"><i class="material-icons black-text">account_circle</i>Perfil</a></li>
                 <li><a href="cadastrarImovel"><i class="material-icons black-text">add_circle</i>Cadastrar Imóvel</a></li>

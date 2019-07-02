@@ -1,13 +1,17 @@
 CREATE TABLE usuario(
 	cpf VARCHAR(14),
-	nome VARCHAR(50),
-	sobreNome VARCHAR(200),
-	telefone VARCHAR(20),
-	dataNascimento DATE,
+	nome VARCHAR(50) NOT NULL ,
+	sobreNome VARCHAR(200) NOT NULL ,
+	telefone VARCHAR(20) NOT NULL ,
+	dataNascimento DATE NOT NULL ,
 	email VARCHAR(200) UNIQUE,
-	senha VARCHAR(50),
+	senha VARCHAR(50) NOT NULL ,
+	foto VARCHAR(50),
     CONSTRAINT cpf_pk PRIMARY KEY(cpf)
 );
+
+INSERT INTO usuario(cpf, nome, sobreNome, telefone, dataNascimento, email, senha, foto)
+VALUES ('111.111.111-11', 'Tester', 'Padrão', '(83)99633-8557', '1999-09-09', 'teste@teste.com', '1234', 'teste.jpg');
 
 CREATE TABLE imovel(
     id VARCHAR(100),

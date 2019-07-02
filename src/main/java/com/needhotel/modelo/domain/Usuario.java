@@ -12,15 +12,11 @@ public class Usuario {
     private LocalDate dataNascimento;
     private String email;
     private String senha;
+    private String fotoPerfil;
 
     public  Usuario(){}
 
-    public Usuario(String email, String senha) {
-        this.email = email;
-        this.senha = senha;
-    }
-
-    public Usuario(String cpf, String nome, String sobreNome, String telefone, LocalDate dataNascimento, String email, String senha) {
+    public Usuario(String cpf, String nome, String sobreNome, String telefone, LocalDate dataNascimento, String email, String senha, String fotoPerfil) {
         this.cpf = cpf;
         this.nome = nome;
         this.sobreNome = sobreNome;
@@ -28,6 +24,15 @@ public class Usuario {
         this.dataNascimento = dataNascimento;
         this.email = email;
         this.senha = senha;
+        this.fotoPerfil = fotoPerfil;
+    }
+
+    public String getFotoPerfil() {
+        return fotoPerfil;
+    }
+
+    public void setFotoPerfil(String fotoPerfil) {
+        this.fotoPerfil = fotoPerfil;
     }
 
     public String getCpf() {

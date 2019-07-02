@@ -27,6 +27,7 @@ public class LoginServlet extends HttpServlet {
 
         try {
             Usuario user = usuarioDaoImpl.autenticacao(email, senha);
+            System.out.println(user);
             if (user != null){
                 HttpSession session = req.getSession();
                 session.setAttribute("usuarioLogado", user);
