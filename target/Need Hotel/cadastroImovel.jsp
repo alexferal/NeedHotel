@@ -28,43 +28,43 @@
 
                 <%--          Input nome do imovel          --%>
                 <div class="input-field col s12">
-                    <input id="nomeImovel" class="validate inputs" type="text" placeholder="Ex.: ED. Rozana Soares">
+                    <input name="nomeImovel" id="nomeImovel" class="validate inputs" type="text" placeholder="Ex.: ED. Rozana Soares">
                     <label for="nomeImovel">Nome do Imóvel</label>
                 </div>
 
                 <%--          Input rua          --%>
                 <div class="input-field col s12">
-                    <input id="nomeRua" class="validate inputs" type="text" placeholder="Ex.: rua Santa Cecilia">
+                    <input name="ruaImovel" id="nomeRua" class="validate inputs" type="text" placeholder="Ex.: rua Santa Cecilia">
                     <label for="nomeRua">Rua do Imóvel</label>
                 </div>
 
                 <%--          Input número da imovel          --%>
                 <div class="input-field col s6">
-                    <input id="numImovel" class="validate inputs" type="text" placeholder="Ex.: 123">
+                    <input name="numeroImovel" id="numImovel" class="validate inputs" type="text" placeholder="Ex.: 123">
                     <label for="numImovel">Número</label>
                 </div>
 
                 <%--          Input CEP          --%>
                 <div class="input-field col s6">
-                    <input id="numCep" class="validate inputs" type="text" placeholder="Ex.: 55555-333">
+                    <input name="cepImovel" id="numCep" class="validate inputs" type="text" placeholder="Ex.: 55555-333">
                     <label for="numCep">CEP</label>
                 </div>
 
                 <%--          Input bairro          --%>
                 <div class="input-field col s12">
-                    <input id="nomeBairro" class="validate inputs" type="text" placeholder="Ex.: Centro">
+                    <input name="bairroImovel" id="nomeBairro" class="validate inputs" type="text" placeholder="Ex.: Centro">
                     <label for="nomeBairro">Bairro</label>
                 </div>
 
                 <%--          Input cidade          --%>
                 <div class="input-field col s6">
-                    <input id="nomeCidades" class="validate inputs" type="text" placeholder="Ex.: Cidadopólis">
+                    <input name="cidadeImovel" id="nomeCidades" class="validate inputs" type="text" placeholder="Ex.: Cidadopólis">
                     <label for="nomeCidades">Cidade</label>
                 </div>
 
                 <%--          Input estado          --%>
                 <div class="input-field col s6">
-                    <select id="selectEstado" class="selects validate">
+                    <select name="estadoImovel" id="selectEstado" class="selects validate">
                         <option value="" disabled selected>Selecione seu estado</option>
                         <optgroup label="Centro-Oeste">
                             <option value="GO">Goiais</option>
@@ -108,12 +108,12 @@
 
                 <%--          Input preço          --%>
                 <div class="input-field col s12">
-                    <input id="valorDiaria" class="validate inputs" type="text" placeholder="Ex.: 500,00">
+                    <input name="valorImovel" id="valorDiaria" class="validate inputs" type="text" placeholder="Ex.: 500,00">
                     <label for="valorDiaria">Diaria</label>
                 </div>
 
                 <div class="modal-footer center">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                    <a href="home.jsp" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
                     <button class="btn waves-effect waves-light" type="submit" name="action">Próximo</button>
                 </div>
 
@@ -123,54 +123,21 @@
             <h6>Comodidades</h6>
             <form class="center continer row" action="cadastrarImovel" method="post">
 
-                    <%--          Input quartos          --%>
-                <div class="input-field col s6">
-                    <input id="quarto" class="validate inputs" type="text" placeholder="Ex.: 2">
-                    <label for="quarto">Quarto</label>
+                    <%--         Select Comodidades          --%>
+                <div class="input-field col s5">
+                    <select multiple name="comidadesImovel">
+                        <option value="" disabled selected>Escolha uma opção</option>
+                        <option value="Aquecimento Central">Aquecimento Central</option>
+                        <option value="Elevador">Elevador</option>
+                        <option value="Wifi">Wifi</option>
+                        <option value="TV">TV</option>
+                        <option value="Cozinha">Cozinha</option>
+                        <option value="Ar-Condiciondo">Ar-Condiciondo</option>
+                    </select>
+                    <label>Comodidades</label>
                 </div>
 
-                    <%--          Input banheiros          --%>
-                <div class="input-field col s6">
-                    <input id="banheiro" class="validate inputs" type="text" placeholder="Ex.: 1">
-                    <label for="banheiro">Banheiro</label>
-                </div>
-
-                    <%--          Input cozinha          --%>
-                <div class="input-field col s6">
-                    <input id="cozinha" class="validate inputs" type="text" placeholder="Ex.: 1">
-                    <label for="cozinha">Cozinha</label>
-                </div>
-
-                    <%--          Input varanda          --%>
-                <div class="input-field col s6">
-                    <input id="varanada" class="validate inputs" type="text" placeholder="Ex.: 1">
-                    <label for="varanada">Varanda</label>
-                </div>
-
-                    <%--          Input cama          --%>
-                <div class="input-field col s6">
-                    <input id="cama" class="validate inputs" type="text" placeholder="Ex.: 1">
-                    <label for="cama">Varanda</label>
-                </div>
-
-                    <%--          CheckBox mobiliado          --%>
-                <div class="input-field col s6">
-                    <input type="checkbox" class="filled-in" />
-                    <span>Mobiliado</span>
-                </div>
-
-                <div class="modal-footer center col s12">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Próximo</button>
-                </div>
-
-            </form>
-
-        </c:if>
-        <c:if test="${etapa eq '3'}">
-            <h6>Imagens</h6>
-            <form class="center continer row" action="cadastrarImovel" method="post">
-
+                    <%--          Input fotos            --%>
                 <div class="file-field input-field col s12">
                     <div class="btn">
                         <span>Fotos</span>
@@ -180,7 +147,6 @@
                         <input class="file-path validate" type="text" placeholder="Faça o upload das fotos do imóvel aqui">
                     </div>
                 </div>
-
                 <div class="modal-footer center col s12">
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
                     <button class="btn waves-effect waves-light" type="submit" name="action">Concluir</button>
