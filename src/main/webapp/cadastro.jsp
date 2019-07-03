@@ -27,26 +27,32 @@
                 <h6>Dados Pessoais</h6>
                 <form class="center" action="cadastrar" method="post">
                     <div class="row container">
+                            <%--          Input nome            --%>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">account_circle</i>
-                            <input required id="primeiroNome" type="text" class="validate inputs" name="primeiroNome">
+                            <input required id="primeiroNome" type="text" class="validate inputs words" name="primeiroNome">
                             <label for="primeiroNome">Nome</label>
                         </div>
+
+                            <%--          Input sobrenome            --%>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">account_circle</i>
-                            <input required id="sobrenome" type="text" class="validate inputs" name="sobrenome" >
+                            <input required id="sobrenome" type="text" class="validate inputs words" name="sobrenome" >
                             <label for="sobrenome">Sobrenome</label>
                         </div>
+                            <%--          Input cpf            --%>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">perm_identity</i>
                             <input required id="cpf" type="text" class="validate inputs" name="cpf">
                             <label for="cpf">Cpf</label>
                         </div>
+                            <%--          Input telefone            --%>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">local_phone</i>
                             <input required id="telefone" type="text" class="validate inputs" name="telefone">
                             <label for="telefone">Telefone</label>
                         </div>
+                            <%--          Input nascimento            --%>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">date_range</i>
                             <input required type="text" class="datepicker inputs" placeholder="Data de Nascimento" name="nascimento">
@@ -101,7 +107,8 @@
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="js/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/login.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
+    <script src="js/validacao.js"></script>
 </body>
 </html>

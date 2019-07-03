@@ -24,41 +24,41 @@
         <h4>Cadastro</h4>
         <c:if test="${etapa eq '1'}">
             <h6>Dados Gerais</h6>
-            <form class="center continer row" action="cadastrarImovel" method="post">
+            <form class="center continer row" action="cadastrarImovel" method="post" onsubmit="return validaImovelForm1(this);">
 
                 <%--          Input nome do imovel          --%>
                 <div class="input-field col s12">
-                    <input required name="nomeImovel" id="nomeImovel" class="validate inputs" type="text" placeholder="Ex.: ED. Rozana Soares">
+                    <input required name="nomeImovel" id="nomeImovel" class="validate inputs words" type="text" placeholder="Ex.: ED. Rozana Soares">
                     <label for="nomeImovel">Nome do Imóvel</label>
                 </div>
 
                 <%--          Input rua          --%>
                 <div class="input-field col s12">
-                    <input required name="ruaImovel" id="nomeRua" class="validate inputs" type="text" placeholder="Ex.: rua Santa Cecilia">
+                    <input required name="ruaImovel" id="nomeRua" class="validate inputs words" type="text" placeholder="Ex.: rua Santa Cecilia">
                     <label for="nomeRua">Rua do Imóvel</label>
                 </div>
 
-                <%--          Input número da imovel          --%>
+                <%--          Input número do imovel          --%>
                 <div class="input-field col s6">
-                    <input required name="numeroImovel" id="numImovel" class="validate inputs" type="text" placeholder="Ex.: 123">
+                    <input required name="numeroImovel" id="numImovel" class="validate inputs numero" type="text" placeholder="Ex.: 123">
                     <label for="numImovel">Número</label>
                 </div>
 
                 <%--          Input CEP          --%>
                 <div class="input-field col s6">
-                    <input required name="cepImovel" id="numCep" class="validate inputs" type="text" placeholder="Ex.: 55555-333">
-                    <label for="numCep">CEP</label>
+                    <input required name="cepImovel" id="cepImovel" class="validate inputs" type="text" placeholder="Ex.: 55555-333">
+                    <label for="cepImovel">CEP</label>
                 </div>
 
                 <%--          Input bairro          --%>
                 <div class="input-field col s12">
-                    <input required name="bairroImovel" id="nomeBairro" class="validate inputs" type="text" placeholder="Ex.: Centro">
+                    <input required name="bairroImovel" id="nomeBairro" class="validate inputs words" type="text" placeholder="Ex.: Centro">
                     <label for="nomeBairro">Bairro</label>
                 </div>
 
                 <%--          Input cidade          --%>
                 <div class="input-field col s6">
-                    <input required name="cidadeImovel" id="nomeCidades" class="validate inputs" type="text" placeholder="Ex.: Cidadopólis">
+                    <input required name="cidadeImovel" id="nomeCidades" class="validate inputs words" type="text" placeholder="Ex.: Cidadopólis">
                     <label for="nomeCidades">Cidade</label>
                 </div>
 
@@ -157,16 +157,15 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/materialize.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/jquery.mask.min.js"></script>
+    <script src="js/validacao.js"></script>
 
     <script>
         $(document).ready(function(){
             $('select').formSelect();
         });
-
-        $('.valor').mask('#.##0,00', {reverse: true});
     </script>
 </body>
 </html>

@@ -24,7 +24,7 @@
         <h4>Cadastro</h4>
         <c:if test="${etapa eq '1'}">
             <h6>Dados Gerais</h6>
-            <form class="center continer row" action="cadastrarImovel" method="post">
+            <form class="center continer row" action="cadastrarImovel" method="post" onsubmit="return validaImovelForm1(this);">
 
                 <%--          Input nome do imovel          --%>
                 <div class="input-field col s12">
@@ -46,8 +46,8 @@
 
                 <%--          Input CEP          --%>
                 <div class="input-field col s6">
-                    <input required name="cepImovel" id="numCep" class="validate inputs" type="text" placeholder="Ex.: 55555-333">
-                    <label for="numCep">CEP</label>
+                    <input required name="cepImovel" id="cepImovel" class="validate inputs" type="text" placeholder="Ex.: 55555-333">
+                    <label for="cepImovel">CEP</label>
                 </div>
 
                 <%--          Input bairro          --%>
@@ -158,6 +158,7 @@
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="js/materialize.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/jquery.mask.min.js"></script>
     <script src="js/validacao.js"></script>
 
