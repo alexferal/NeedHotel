@@ -28,43 +28,43 @@
 
                 <%--          Input nome do imovel          --%>
                 <div class="input-field col s12">
-                    <input name="nomeImovel" id="nomeImovel" class="validate inputs" type="text" placeholder="Ex.: ED. Rozana Soares">
+                    <input required name="nomeImovel" id="nomeImovel" class="validate inputs" type="text" placeholder="Ex.: ED. Rozana Soares">
                     <label for="nomeImovel">Nome do Imóvel</label>
                 </div>
 
                 <%--          Input rua          --%>
                 <div class="input-field col s12">
-                    <input name="ruaImovel" id="nomeRua" class="validate inputs" type="text" placeholder="Ex.: rua Santa Cecilia">
+                    <input required name="ruaImovel" id="nomeRua" class="validate inputs" type="text" placeholder="Ex.: rua Santa Cecilia">
                     <label for="nomeRua">Rua do Imóvel</label>
                 </div>
 
                 <%--          Input número da imovel          --%>
                 <div class="input-field col s6">
-                    <input name="numeroImovel" id="numImovel" class="validate inputs" type="text" placeholder="Ex.: 123">
+                    <input required name="numeroImovel" id="numImovel" class="validate inputs" type="text" placeholder="Ex.: 123">
                     <label for="numImovel">Número</label>
                 </div>
 
                 <%--          Input CEP          --%>
                 <div class="input-field col s6">
-                    <input name="cepImovel" id="numCep" class="validate inputs" type="text" placeholder="Ex.: 55555-333">
+                    <input required name="cepImovel" id="numCep" class="validate inputs" type="text" placeholder="Ex.: 55555-333">
                     <label for="numCep">CEP</label>
                 </div>
 
                 <%--          Input bairro          --%>
                 <div class="input-field col s12">
-                    <input name="bairroImovel" id="nomeBairro" class="validate inputs" type="text" placeholder="Ex.: Centro">
+                    <input required name="bairroImovel" id="nomeBairro" class="validate inputs" type="text" placeholder="Ex.: Centro">
                     <label for="nomeBairro">Bairro</label>
                 </div>
 
                 <%--          Input cidade          --%>
                 <div class="input-field col s6">
-                    <input name="cidadeImovel" id="nomeCidades" class="validate inputs" type="text" placeholder="Ex.: Cidadopólis">
+                    <input required name="cidadeImovel" id="nomeCidades" class="validate inputs" type="text" placeholder="Ex.: Cidadopólis">
                     <label for="nomeCidades">Cidade</label>
                 </div>
 
                 <%--          Input estado          --%>
                 <div class="input-field col s6">
-                    <select name="estadoImovel" id="selectEstado" class="selects validate">
+                    <select required name="estadoImovel" id="selectEstado" class="selects validate">
                         <option value="" disabled selected>Selecione seu estado</option>
                         <optgroup label="Centro-Oeste">
                             <option value="GO">Goiais</option>
@@ -108,7 +108,7 @@
 
                 <%--          Input preço          --%>
                 <div class="input-field col s12">
-                    <input name="valorImovel" id="valorDiaria" class="validate inputs" type="text" placeholder="Ex.: 500,00">
+                    <input required name="valorImovel" id="valorDiaria" class="validate inputs" type="number" placeholder="Ex.: 500,00">
                     <label for="valorDiaria">Diaria</label>
                 </div>
 
@@ -144,7 +144,7 @@
                         <input type="file" multiple>
                     </div>
                     <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text" placeholder="Faça o upload das fotos do imóvel aqui">
+                        <input required class="file-path validate" type="text" placeholder="Faça o upload das fotos do imóvel aqui">
                     </div>
                 </div>
                 <div class="modal-footer center col s12">
