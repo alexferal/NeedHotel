@@ -108,7 +108,7 @@
 
                 <%--          Input preço          --%>
                 <div class="input-field col s12">
-                    <input required name="valorImovel" id="valorDiaria" class="validate inputs" type="number" placeholder="Ex.: 500,00">
+                    <input required name="valorImovel" id="valorDiaria" class="validate inputs valor" type="text" placeholder="Ex.: 500,00">
                     <label for="valorDiaria">Diaria</label>
                 </div>
 
@@ -159,10 +159,14 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/materialize.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
+
     <script>
         $(document).ready(function(){
             $('select').formSelect();
         });
+
+        $('.valor').mask('#.##0,00', {reverse: true});
     </script>
 </body>
 </html>

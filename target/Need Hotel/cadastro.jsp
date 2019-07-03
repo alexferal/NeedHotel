@@ -29,27 +29,27 @@
                     <div class="row container">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">account_circle</i>
-                            <input id="primeiroNome" type="text" class="validate inputs" name="primeiroNome">
+                            <input required id="primeiroNome" type="text" class="validate inputs" name="primeiroNome">
                             <label for="primeiroNome">Nome</label>
                         </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">account_circle</i>
-                            <input id="sobrenome" type="text" class="validate inputs" name="sobrenome" >
+                            <input required id="sobrenome" type="text" class="validate inputs" name="sobrenome" >
                             <label for="sobrenome">Sobrenome</label>
                         </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">perm_identity</i>
-                            <input id="cpf" type="text" class="validate inputs" name="cpf">
+                            <input required id="cpf" type="text" class="validate inputs" name="cpf">
                             <label for="cpf">Cpf</label>
                         </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">local_phone</i>
-                            <input id="telefone" type="text" class="validate inputs" name="telefone">
+                            <input required id="telefone" type="text" class="validate inputs" name="telefone">
                             <label for="telefone">Telefone</label>
                         </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">date_range</i>
-                            <input type="text" class="datepicker inputs" placeholder="Data de Nascimento" name="nascimento">
+                            <input required type="text" class="datepicker inputs" placeholder="Data de Nascimento" name="nascimento">
                         </div>
                     </div>
                     <div class="modal-footer container center">
@@ -65,26 +65,26 @@
                         <div class="file-field input-field col s12">
                             <div class="btn">
                                 <span><i class="material-icons">add_photo</i> </span>
-                                <input type="file" name="foto" id="foto" accept="image/*">
+                                <input required type="file" name="foto" id="foto" accept="image/*">
                             </div>
                             <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text" placeholder="Faça o upload das fotos do imóvel aqui">
+                                <input required class="file-path validate" type="text" placeholder="Faça o upload das fotos do imóvel aqui">
                             </div>
                         </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">email</i>
-                            <input id="email" type="email" class="validate inputs" name="email">
+                            <input required id="email" type="email" class="validate inputs" name="email">
                             <label for="email">Email</label>
                         </div>
 
                         <div class="input-field col s12">
                             <i class="material-icons prefix">lock</i>
-                            <input id="senha" type="password" class="validate inputs" name="senha" >
+                            <input required id="senha" type="password" class="validate inputs" name="senha" >
                             <label for="senha">Senha</label>
                         </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">lock</i>
-                            <input id="ConSenha" type="password" class="validate inputs">
+                            <input required id="ConSenha" type="password" class="validate inputs">
                             <label for="ConSenha">Confirmar senha</label>
                         </div>
                     </div>
