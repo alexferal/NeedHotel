@@ -6,6 +6,7 @@
         <link type="text/css" rel="stylesheet" href="css/login.css"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <meta charset="UTF-8"/>
+        <title>Need Hotel</title>
     </head>
     <body class="blue-grey darken-1">
         <main class="container center row">

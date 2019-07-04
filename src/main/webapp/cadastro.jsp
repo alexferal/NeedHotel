@@ -25,7 +25,7 @@
             <h4>Cadastro</h4>
             <c:if test="${etapaFormUser eq '1'}">
                 <h6>Dados Pessoais</h6>
-                <form class="center" action="cadastrar" method="post">
+                <form class="center" action="cadastrar" method="post" onsubmit="return validaFormUsuario(this);">
                     <div class="row container">
                             <%--          Input nome            --%>
                         <div class="input-field col s12">
@@ -66,7 +66,7 @@
             </c:if>
             <c:if test="${etapaFormUser eq '2'}">
                 <h6>Conta</h6>
-                <form class="center" action="cadastrar" method="post" enctype="multipart/form-data">
+                <form class="center" action="cadastrar" method="post" enctype="multipart/form-data" onsubmit="return validaSenha(this);">
                     <div class="row container">
                         <div class="file-field input-field col s12">
                             <div class="btn">
@@ -90,15 +90,14 @@
                         </div>
                         <div class="input-field col s12">
                             <i class="material-icons prefix">lock</i>
-                            <input required id="ConSenha" type="password" class="validate inputs">
-                            <label for="ConSenha">Confirmar senha</label>
+                            <input required id="conSenha" name="conSenha" type="password" class="validate inputs">
+                            <label for="conSenha">Confirmar senha</label>
                         </div>
                     </div>
                     <div class="modal-footer center">
                         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
                         <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar</button>
                     </div>
-
                 </form>
             </c:if>
         </div>
@@ -108,6 +107,7 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="js/jquery.mask.min.js"></script>
     <script src="js/validacao.js"></script>
 </body>

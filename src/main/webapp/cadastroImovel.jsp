@@ -24,7 +24,7 @@
         <h4>Cadastro</h4>
         <c:if test="${etapa eq '1'}">
             <h6>Dados Gerais</h6>
-            <form class="center continer row" action="cadastrarImovel" method="post" onsubmit="return validaImovelForm1(this);">
+            <form class="center continer row" action="cadastrarImovel" method="post" onsubmit="return validaFormImovel(this);">
 
                 <%--          Input nome do imovel          --%>
                 <div class="input-field col s12">
