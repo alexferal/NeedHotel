@@ -30,27 +30,21 @@ import java.util.List;
 
 public class CadastroServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         doPost(req, resp);
     }
 
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp){
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         HttpSession session = req.getSession();
-        if (session.getAttribute("etapaFormUser") == null) {
 
-            session.setAttribute("etapaFormUser", "1");
-            try {
-                req.getRequestDispatcher("cadastro.jsp").forward(req, resp);
-            } catch (ServletException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
+        if (req.getParameter("etapaFormUsuario").equals("0")){
+            System.out.println("Param 0");
+            req.getRequestDispatcher("cadastro.jsp?etapaFormUsuario=1").forward(req, resp);
         } else {
-
             UsuarioDaoImpl usuarioDaoImpl = new UsuarioDaoImpl();
-            if (session.getAttribute("etapaFormUser").equals("1")){
+            System.out.println("Param 1");
+
+            if (req.getParameter("etapaFormUsuario").equals("1")){
 
                 Usuario usuario = new Usuario();
                 usuario.setCpf(req.getParameter("cpf"));
@@ -62,57 +56,39 @@ public class CadastroServlet extends HttpServlet {
                 usuario.setDataNascimento(LocalDate.parse(req.getParameter("nascimento"), formatter));
 
                 session.setAttribute("firstRegister", usuario);
-                session.setAttribute("etapaFormUser", "2");
-                try {
-                    req.getRequestDispatcher("cadastro.jsp").forward(req, resp);
-                } catch (ServletException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                req.getRequestDispatcher("cadastrar?etapaFormUsuario=2").forward(req, resp);
 
-            }else if (session.getAttribute("etapaFormUser").equals("2")){
+            }else if (req.getParameter("etapaFormUsuario").equals("1")){
                 Usuario usuario = (Usuario)session.getAttribute("firstRegister");
 
                 usuario.setEmail(req.getParameter("email"));
                 usuario.setSenha(req.getParameter("senha"));
-//                if (ServletFileUpload.isMultipartContent(req)){
+                if (ServletFileUpload.isMultipartContent(req)){
 
                     String uploadPath = getServletContext().getRealPath("") + File.separator + "imagem";
                     File uploadDir = new File(uploadPath);
 
-                    if (!uploadDir.exists()) uploadDir.mkdir();
+                    if (!uploadDir.exists())
+                        uploadDir.mkdir();
 
                     List<String> foto = new ArrayList<>();
-                try {
                     for (Part part : req.getParts()) {
                         if (part.getContentType() != null){
                             String fileName = getFileName(part);
-                            String nomeFoto = ZonedDateTime.now().toInstant().getEpochSecond() + fileName.substring(fileName.indexOf('.'), fileName.length()-1);
+                            String nomeFoto = ZonedDateTime.now().toInstant().getEpochSecond() + fileName.substring(fileName.indexOf('.'));
                             foto.add(nomeFoto);
                             part.write(uploadPath + File.separator + nomeFoto);
                         }
                     }
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (ServletException e) {
-                    e.printStackTrace();
+                    usuario.setFotoPerfil(foto.get(0));
                 }
-                usuario.setFotoPerfil(foto.get(0));
-//                }
                 usuarioDaoImpl.cadastrarUsuario(usuario);
-                session.setAttribute("etapaFormUser", null);
-                try {
-                    req.getRequestDispatcher("login.jsp").forward(req, resp);
-                } catch (ServletException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
+                session.setAttribute("firstRegister", null);
+                req.getRequestDispatcher("login.jsp").forward(req, resp);
             }
         }
+
+
     }
 
     private String getFileName(Part part) {

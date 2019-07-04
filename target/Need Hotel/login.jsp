@@ -27,7 +27,7 @@
                     </div>
                     <button id="entrar" type="submited" name="action" class="btn waves-effect waves-teal btn-flat blue lighten-4">Entrar</button>
                 </form>
-                <label class="black-text center">Ainda não possui uma conta? <a href="cadastrar">Cadastre-se!</a></label>
+                <label class="black-text center">Ainda não possui uma conta? <a href="cadastrar?etapaFormUsuario=0">Cadastre-se!</a></label>
             </div>
         </main>
 

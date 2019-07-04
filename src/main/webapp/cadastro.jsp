@@ -23,7 +23,7 @@
     <div >
         <div id="divCadastro" class="container white" >
             <h4>Cadastro</h4>
-            <c:if test="${etapaFormUser eq '1'}">
+            <c:if test="${param.etapaFormUsuario eq '1'}">
                 <h6>Dados Pessoais</h6>
                 <form class="center" action="cadastrar" method="post" onsubmit="return validaFormUsuario(this);">
                     <div class="row container">
@@ -64,7 +64,7 @@
                     </div>
                 </form>
             </c:if>
-            <c:if test="${etapaFormUser eq '2'}">
+            <c:if test="${param.etapaFormUsuario eq '2'}">
                 <h6>Conta</h6>
                 <form class="center" action="cadastrar" method="post" enctype="multipart/form-data" onsubmit="return validaSenha(this);">
                     <div class="row container">
@@ -95,7 +95,7 @@
                         </div>
                     </div>
                     <div class="modal-footer center">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                        <a href="login" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
                         <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar</button>
                     </div>
                 </form>

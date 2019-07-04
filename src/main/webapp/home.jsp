@@ -46,7 +46,7 @@
             <div class="nav-wrapper black">
                 <a href="#" class="brand-logo center">Need Hotel</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down userNome">
-                    <li><a href="#">Olá, <c:out value="${usuarioLogado.nome}"/></a></li>
+                    <li><a href="#">Olá, <c:out value="${usuarioLogado.nome}"/><c:out value="${usuarioLogado.sobreNome}"/></a></li>
                 </ul>
             </div>
         </nav>
