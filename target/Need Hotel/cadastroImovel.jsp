@@ -121,7 +121,7 @@
         </c:if>
         <c:if test="${etapa eq '2'}">
             <h6>Comodidades</h6>
-            <form class="center continer row" action="cadastrarImovel" method="post">
+            <form class="center continer row" action="cadastrarImovel" method="post" enctype="multipart/form-data">
 
                     <%--         Select Comodidades          --%>
                 <div class="input-field col s5">

@@ -3,14 +3,16 @@ package com.needhotel.controle;
 import com.needhotel.modelo.dao.implementacao.ImovelDaoImpl;
 import com.needhotel.modelo.domain.Imovel;
 import com.needhotel.modelo.domain.Usuario;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
+import java.io.File;
 import java.io.IOException;
+import java.time.ZonedDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/cadastrarImovel")
 public class CadastroImovelServlet extends HttpServlet {
@@ -36,6 +38,35 @@ public class CadastroImovelServlet extends HttpServlet {
             } else if (etapa.equals("2")){
                 String lista[] = req.getParameterValues("comidadesImovel");
 
+                if (ServletFileUpload.isMultipartContent(req)){
+
+                    //Atribui a String o diretorio padrão onde as fotos serão armazenadas
+                    String uploadPath = getServletContext().getRealPath("") + File.separator + "imagem";
+                    File uploadDir = new File(uploadPath);
+
+                    //Verifica se já existe o diretorio criado
+                    if (!uploadDir.exists())
+                        uploadDir.mkdir();
+
+                    //Lista a ser preenchida com os nomes dos arquivos de imagens
+                    List<String> fotosImovel = new ArrayList<>();
+
+                    for (Part part : req.getParts()) {
+
+                        //Verifica se possui um tipo
+                        if (part.getContentType() != null){
+                            //Guarda o nome original e a extenção ao qual o arquivo pertence
+                            String fileName = getFileName(part);
+                            //Defini um novo ao arquivo
+                            String nomeFoto = "imovel-" + ZonedDateTime.now().toInstant().getEpochSecond() + fileName.substring(fileName.indexOf('.'));
+                            //Adiciona o nome do arquivo a lista
+                            fotosImovel.add(nomeFoto);
+                            //Escreve o arquivo ao diretorio definido em "uploadPath"
+                            part.write(uploadPath + File.separator + nomeFoto);
+                            //todo: chamar o metodo de incluir nome das fotos ao banco
+                        }
+                    }
+                }
                 session.setAttribute("etapa", null);
                 req.getRequestDispatcher("home.jsp").forward(req, resp);
             }
@@ -61,6 +92,14 @@ public class CadastroImovelServlet extends HttpServlet {
         imovel.setNumero(req.getParameter("numeroImovel"));
         imovel.setDisponibilidade(true);
         return imovel;
+    }
+
+    private String getFileName(Part part) {
+        for (String content : part.getHeader("content-disposition").split(";")) {
+            if (content.trim().startsWith("filename"))
+                return content.substring(content.indexOf("=") + 2, content.length() - 1);
+        }
+        return "Default";
     }
 }
 

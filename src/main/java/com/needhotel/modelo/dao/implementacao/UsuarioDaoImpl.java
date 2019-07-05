@@ -51,8 +51,6 @@ public class UsuarioDaoImpl implements UsuarioDAO {
         return null;
     }
 
-
-
     @Override
     public Boolean cadastrarUsuario(Usuario usuario) {
         String query = "INSERT INTO usuario (cpf, nome, sobreNome, telefone, dataNascimento, email, senha, foto) VALUES (?,?,?,?,?,?,?,?)";
@@ -140,6 +138,22 @@ public class UsuarioDaoImpl implements UsuarioDAO {
             e.printStackTrace();
         }
 
+        return null;
+    }
+
+    public Boolean verificaCpf(String cpf){
+        String query = "SELECT * FROM usuario WHERE cpf = ?";
+
+        try (Connection connection = factory.getConnection()) {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, cpf);
+
+            ResultSet resultSet = statement.executeQuery(query);
+
+            return resultSet.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 

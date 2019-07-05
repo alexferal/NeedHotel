@@ -23,9 +23,12 @@
     <div >
         <div id="divCadastro" class="container white" >
             <h4>Cadastro</h4>
-            <c:if test="${param.etapaFormUsuario eq '1'}">
+            <c:if test="${param.etapaForm eq '1'}">
                 <h6>Dados Pessoais</h6>
-                <form class="center" action="cadastrar" method="post" onsubmit="return validaFormUsuario(this);">
+                <c:if test="${param.erro eq 'cpf'}">
+                    <h6 class="red-text" onload=""><i class="material-icons tiny">info</i>Já existe </h6>
+                </c:if>
+                <form class="center" action="cadastrar?etapaForm=1" method="post" onsubmit="return validaFormUsuario(this);">
                     <div class="row container">
                             <%--          Input nome            --%>
                         <div class="input-field col s12">
@@ -64,9 +67,9 @@
                     </div>
                 </form>
             </c:if>
-            <c:if test="${param.etapaFormUsuario eq '2'}">
+            <c:if test="${param.etapaForm eq '2'}">
                 <h6>Conta</h6>
-                <form class="center" action="cadastrar" method="post" enctype="multipart/form-data" onsubmit="return validaSenha(this);">
+                <form class="center" action="cadastrar?etapaForm=2" method="post" enctype="multipart/form-data" onsubmit="return validaSenha(this);">
                     <div class="row container">
                         <div class="file-field input-field col s12">
                             <div class="btn">
@@ -95,7 +98,7 @@
                         </div>
                     </div>
                     <div class="modal-footer center">
-                        <a href="login" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                        <a href="cadastro.jsp?etapaForm=1" class="modal-close waves-effect waves-green btn-flat">Voltar</a>
                         <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar</button>
                     </div>
                 </form>
