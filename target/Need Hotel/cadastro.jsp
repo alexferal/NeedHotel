@@ -25,6 +25,9 @@
             <h4>Cadastro</h4>
             <c:if test="${param.etapaForm eq '1'}">
                 <h6>Dados Pessoais</h6>
+                <c:if test="${param.erro eq 'cpf'}">
+                    <h6 class="red-text" onload=""><i class="material-icons tiny">info</i>Já existe </h6>
+                </c:if>
                 <form class="center" action="cadastrar?etapaForm=1" method="post" onsubmit="return validaFormUsuario(this);">
                     <div class="row container">
                             <%--          Input nome            --%>

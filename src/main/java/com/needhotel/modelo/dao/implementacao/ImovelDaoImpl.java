@@ -22,11 +22,20 @@ public class ImovelDaoImpl implements ImovelDao {
     @Override
     public Boolean cadastrarImovel(Imovel imovel) {
         String query = "INSERT INTO imovel(id, proprietario, nome, rua, bairro, numero, cep, cidade, estado, valor, disponibilidade) " +
-                "VALUES (id=?, proprietario=?, nome=?, rua=?, bairro=?, numero=?, cep=?, cidade=?, estado=?, valor=?, disponibilidade=?)";
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, imovel.getId());
-            statement = setStatement(statement, imovel);
+            statement.setString(2, imovel.getProprietario());
+            statement.setString(3, imovel.getNome());
+            statement.setString(4, imovel.getRua());
+            statement.setString(5, imovel.getBairro());
+            statement.setString(6, imovel.getNumero());
+            statement.setString(7, imovel.getCep());
+            statement.setString(8, imovel.getCidade());
+            statement.setString(9, imovel.getEstado());
+            statement.setFloat(10, imovel.getValor());
+            statement.setBoolean(11, imovel.isDisponibilidade());
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -54,13 +63,16 @@ public class ImovelDaoImpl implements ImovelDao {
     public Boolean deletarImovel(String id) {
         String query = "DELETE FROM imovel WHERE id = ?";
         String query1 = "DELETE FROM foto WHERE id_imovel = ?";
+        String query2 = "DELETE FROM comodidade WHERE id_imovel = ?";
         try (Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             PreparedStatement statement1 = connection.prepareStatement(query1);
+            PreparedStatement statement2 = connection.prepareStatement(query2);
             statement.setString(1, id);
             statement1.setString(1, id);
+            statement2.setString(1, id);
 
-            return statement.executeUpdate() > 0 && statement1.executeUpdate() > 0;
+            return statement.executeUpdate() > 0 && statement1.executeUpdate() > 0 &&  statement2.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -112,6 +124,20 @@ public class ImovelDaoImpl implements ImovelDao {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public Boolean cadastrarComodidades(String comodidade, String imovel) {
+        String query = "INSERT INTO comodidade(id_imovel, recurso) VALUES (?,?)";
+        try(Connection connection = factory.getConnection()) {
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, imovel);
+            statement.setString(2, comodidade);
+            return statement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     private List<Imovel> setListaImoveis(ResultSet resultSet) throws SQLException {
