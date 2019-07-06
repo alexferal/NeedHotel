@@ -154,7 +154,7 @@ public class UsuarioDaoImpl implements UsuarioDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return false;
     }
 
 

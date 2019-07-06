@@ -4,6 +4,7 @@ $(document).ready(function(){
     });
 });
 
+var data = new Date();
 
 $(document).ready(function(){
     $('.datepicker').datepicker({
@@ -15,29 +16,13 @@ $(document).ready(function(){
             monthsShort: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
             weekdays: ["Domingo","Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"],
             weekdaysShort: ["Dom","Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
-            weekdaysAbbrev: ["DOM","SEG", "TER", "QUA", "QUI", "SEX", "SÁB"]
+            weekdaysAbbrev: ["DOM","SEG", "TER", "QUA", "QUI", "SEX", "SÁB"],
 
         },
 
-        format: 'dd/mm/yyyy'
+        format: 'dd/mm/yyyy',
+        maxDate: new Date(data.getFullYear(), data.getMonth(), data.getDay()),
     });
-});
-
-
-$("#senha").on("focusout", function (e) {
-    if ($("#senha").val() != $("#ConSenha").val()) {
-        $("#ConSenha").removeClass("valid").addClass("invalid");
-    } else {
-        $("#ConSenha").removeClass("invalid").addClass("valid");
-    }
-});
-
-$("#ConSenha").on("keyup", function (e) {
-    if ($("#senha").val() != $("#ConSenha").val()) {
-        $(this).removeClass("valid").addClass("invalid");
-    } else {
-        $(this).removeClass("invalid").addClass("valid");
-    }
 });
 
 

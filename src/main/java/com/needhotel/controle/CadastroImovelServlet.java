@@ -21,6 +21,18 @@ import java.util.List;
 public class CadastroImovelServlet extends HttpServlet {
 
     protected void doGet (HttpServletRequest req, HttpServletResponse resp){
+        HttpSession session = req.getSession();
+        if(req.getParameter("voltar").equals("2")){
+            Imovel imovel = (Imovel)session.getAttribute("etapa1");
+            req.setAttribute("dadosEtapa1", imovel);
+            try {
+                req.getRequestDispatcher("cadastroImovel.jsp?etapaForm=1").forward(req, resp);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         doPost(req, resp);
     }
 
@@ -28,17 +40,12 @@ public class CadastroImovelServlet extends HttpServlet {
         ImovelDaoImpl imovelDao = new ImovelDaoImpl();
         try {
             HttpSession session = req.getSession();
-            String etapa = (String) session.getAttribute("etapa");
-            if (etapa == null){
-                session.setAttribute("etapa", "1");
-                req.getRequestDispatcher("cadastroImovel.jsp").forward(req, resp);
-            } else if (etapa.equals("1")){
+            if (req.getParameter("etapaForm").equals("1")){
                 Imovel imovel = etapa1(req);
                 System.out.println(imovel);
                 session.setAttribute("etapa1", imovel);
-                session.setAttribute("etapa", "2");
-                req.getRequestDispatcher("cadastroImovel.jsp").forward(req, resp);
-            } else if (etapa.equals("2")){
+                req.getRequestDispatcher("cadastroImovel.jsp?etapaForm=2").forward(req, resp);
+            } else if (req.getParameter("etapaForm").equals("2")){
                 Imovel imovel = (Imovel)session.getAttribute("etapa1");
                 String[] lista = req.getParameterValues("comidadesImovel");
                 imovelDao.cadastrarImovel(imovel);
