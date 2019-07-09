@@ -140,8 +140,8 @@
                     <%--          Input fotos            --%>
                 <div class="file-field input-field col s12">
                     <div class="btn">
-                        <span>Fotos</span>
-                        <input type="file" name="fotosImovel" accept="image/*" multiple>
+                        <span>Foto</span>
+                        <input type="file" name="fotosImovel" accept="image/*">
                     </div>
                     <div class="file-path-wrapper">
                         <input required class="file-path validate" type="text" placeholder="Faça o upload das fotos do imóvel aqui">

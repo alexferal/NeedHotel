@@ -57,9 +57,9 @@
             <div class="carousel-fixed-item center">
 
                 <%--        Elemento fixo ao centro do slide        --%>
-                <form class="col s8 offset-s2 white row" style="border-radius: 10px;">
+                <form class="col s8 offset-s2 white row" style="border-radius: 10px; height: 45px;">
                     <input class="col s10" type="text" placeholder="Cidades, Hoteis, ...">
-                    <a href="#" class="col s2"><i class="medium material-icons black-text">search</i></a>
+                    <button href="#" class="col s2 btn-flat" style="height: 45px;"><i class="Small material-icons black-text">search</i></button>
                 </form>
 
             </div>

@@ -48,12 +48,6 @@ public class CadastroImovelServlet extends HttpServlet {
             } else if (req.getParameter("etapaForm").equals("2")){
                 Imovel imovel = (Imovel)session.getAttribute("etapa1");
                 String[] lista = req.getParameterValues("comidadesImovel");
-                imovelDao.cadastrarImovel(imovel);
-
-                //Salva as comodidades no banco
-                for (String comodidade : lista){
-                    imovelDao.cadastrarComodidades(comodidade, imovel.getId());
-                }
 
                 if (ServletFileUpload.isMultipartContent(req)){
 
@@ -65,8 +59,6 @@ public class CadastroImovelServlet extends HttpServlet {
                     if (!uploadDir.exists())
                         uploadDir.mkdir();
 
-                    //Lista a ser preenchida com os nomes dos arquivos de imagens
-                    List<String> fotosImovel = new ArrayList<>();
 
                     for (Part part : req.getParts()) {
 
@@ -79,10 +71,19 @@ public class CadastroImovelServlet extends HttpServlet {
                             //Escreve o arquivo ao diretorio definido em "uploadPath"
                             part.write(uploadPath + File.separator + nomeFoto);
 
-                            imovelDao.cadastrarFotosImovel(imovel.getId(), nomeFoto);
+                            imovel.setFoto(nomeFoto);
                         }
                     }
                 }
+
+                //Salva o imovel no banco
+                imovelDao.cadastrarImovel(imovel);
+
+                //Salva as comodidades no banco
+                for (String comodidade : lista){
+                    imovelDao.cadastrarComodidades(comodidade, imovel.getId());
+                }
+
                 session.setAttribute("etapa", null);
                 req.getRequestDispatcher("home.jsp").forward(req, resp);
             }

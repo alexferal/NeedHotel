@@ -21,21 +21,12 @@ public class ImovelDaoImpl implements ImovelDao {
 
     @Override
     public Boolean cadastrarImovel(Imovel imovel) {
-        String query = "INSERT INTO imovel(id, proprietario, nome, rua, bairro, numero, cep, cidade, estado, valor, disponibilidade) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO imovel(id, proprietario, nome, rua, bairro, numero, cep, cidade, estado, valor, disponibilidade, foto) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, imovel.getId());
-            statement.setString(2, imovel.getProprietario());
-            statement.setString(3, imovel.getNome());
-            statement.setString(4, imovel.getRua());
-            statement.setString(5, imovel.getBairro());
-            statement.setString(6, imovel.getNumero());
-            statement.setString(7, imovel.getCep());
-            statement.setString(8, imovel.getCidade());
-            statement.setString(9, imovel.getEstado());
-            statement.setFloat(10, imovel.getValor());
-            statement.setBoolean(11, imovel.isDisponibilidade());
+            statement = setStatement(statement, imovel);
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -83,7 +74,7 @@ public class ImovelDaoImpl implements ImovelDao {
     @Override
     public Boolean atualizarImovel(String id, Imovel imovel) {
         String query = "UPDATE imovel" +
-                " SET id=?, proprietario=?, nome=?, rua=?, bairro=?, numero=?, cep=?, cidade=?, estado=?, valor=?, disponibilidade=?";
+                " SET id=?, proprietario=?, nome=?, rua=?, bairro=?, numero=?, cep=?, cidade=?, estado=?, valor=?, disponibilidade=?, foto=?";
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, id);
@@ -155,7 +146,7 @@ public class ImovelDaoImpl implements ImovelDao {
             imovel.setEstado(resultSet.getString("estado"));
             imovel.setValor(resultSet.getFloat("valor"));
             imovel.setDisponibilidade(resultSet.getBoolean("disponibilidade"));
-            imovel.setFotos(getfotos(resultSet.getString("id")));
+            imovel.setFoto(resultSet.getString("foto"));
             imoveis.add(imovel);
         }
         return imoveis;
@@ -190,6 +181,7 @@ public class ImovelDaoImpl implements ImovelDao {
         statement.setString(9, imovel.getEstado());
         statement.setFloat(10, imovel.getValor());
         statement.setBoolean(11, imovel.isDisponibilidade());
+        statement.setString(12, imovel.getFoto());
         return statement;
     }
 }

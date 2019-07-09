@@ -16,17 +16,13 @@ public class Imovel {
     private String estado;
     private Float valor;
     private boolean disponibilidade;
-    private List<String> fotos;
+    private String foto;
 
     public Imovel() {
         id = String.valueOf(ZonedDateTime.now().toInstant().getEpochSecond());
     }
 
-    public Imovel(String proprietario, String nome, String rua, String bairro, String numero, String cep, String cidade, String estado, Float valor, boolean disponibilidade) {
-        id = String.valueOf(ZonedDateTime.now().toInstant().getEpochSecond());
-        this.proprietario = proprietario;
-        this.nome = nome;
-        this.rua = rua;
+    public Imovel(String proprietario, String nome, String rua, String bairro, String numero, String cep, String cidade, String estado, Float valor, boolean disponibilidade, String foto){
         this.bairro = bairro;
         this.numero = numero;
         this.cep = cep;
@@ -34,7 +30,7 @@ public class Imovel {
         this.estado = estado;
         this.valor = valor;
         this.disponibilidade = disponibilidade;
-        fotos = new ArrayList<>();
+        this.foto = foto;
     }
 
     public String getId() {
@@ -125,12 +121,12 @@ public class Imovel {
         this.disponibilidade = disponibilidade;
     }
 
-    public List<String> getFotos() {
-        return fotos;
+    public String getFoto() {
+        return foto;
     }
 
-    public void setFotos(List<String> fotos) {
-        this.fotos = fotos;
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     @Override
@@ -147,7 +143,7 @@ public class Imovel {
                 ", estado='" + estado + '\'' +
                 ", valor=" + valor +
                 ", disponibilidade=" + disponibilidade +
-                ", fotos=" + fotos +
+                ", foto='" + foto + '\'' +
                 '}';
     }
 }

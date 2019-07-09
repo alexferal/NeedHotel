@@ -34,7 +34,7 @@
                     <a href="#email"><span class="white-text email"><c:out value="${usuarioLogado.email}"/></a>
                 </div></li>
                 <li><a href="#!"><i class="material-icons black-text">account_circle</i>Perfil</a></li>
-                <li><a href="cadastrarImovel"><i class="material-icons black-text">add_circle</i>Cadastrar Imóvel</a></li>
+                <li><a href="cadastroImovel.jsp?etapaForm=1"><i class="material-icons black-text">add_circle</i>Cadastrar Imóvel</a></li>
                 <li><a href="logout"><i class="material-icons black-text">exit_to_app</i>Logout</a></li>
                 <li><div class="divider"></div></li>
                 <li><a href="#!"><i class="material-icons black-text">home</i>Home</a></li>
@@ -46,7 +46,7 @@
             <div class="nav-wrapper black">
                 <a href="#" class="brand-logo center">Need Hotel</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down userNome">
-                    <li><a href="#">Olá, <c:out value="${usuarioLogado.nome}"/><c:out value="${usuarioLogado.sobreNome}"/></a></li>
+                    <li><a href="#">Olá, <c:out value="${usuarioLogado.nome}"/> <c:out value="${usuarioLogado.sobreNome}"/></a></li>
                 </ul>
             </div>
         </nav>
@@ -57,9 +57,9 @@
             <div class="carousel-fixed-item center">
 
                 <%--        Elemento fixo ao centro do slide        --%>
-                <form class="col s8 offset-s2 white row" style="border-radius: 10px;">
+                <form class="col s8 offset-s2 white row" style="border-radius: 10px; height: 45px;">
                     <input class="col s10" type="text" placeholder="Cidades, Hoteis, ...">
-                    <a href="#" class="col s2"><i class="medium material-icons black-text">search</i></a>
+                    <button href="#" class="col s2 btn-flat" style="height: 45px;"><i class="Small material-icons black-text">search</i></button>
                 </form>
 
             </div>

@@ -25,6 +25,7 @@ CREATE TABLE imovel(
     estado VARCHAR(100),
     valor FLOAT,
     disponibilidade BOOLEAN,
+    foto VARCHAR(200),
     CONSTRAINT id_pk PRIMARY KEY(id),
     CONSTRAINT proprietario_fk FOREIGN KEY(proprietario)
         REFERENCES usuario(cpf)
