@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="needHotel@localhost" uuid="46ce9779-eee9-485b-95b4-5eb4b589c773">
+    <data-source name="needHotel@localhost" uuid="f0ddee62-bcb4-472b-901c-277c4520204f">
       <database-info product="PostgreSQL" version="10.8 (Ubuntu 10.8-0ubuntu0.18.04.1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="10.8" exact-driver-version="42.2">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>

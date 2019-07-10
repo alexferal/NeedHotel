@@ -113,7 +113,7 @@
                 </div>
 
                 <div class="modal-footer center">
-                    <a href="" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                    <a href="home.jsp" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
                     <button class="btn waves-effect waves-light" type="submit" name="action">Próximo</button>
                 </div>
 
@@ -159,8 +159,6 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="js/materialize.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="js/jquery.mask.min.js"></script>
-    <script src="js/validacao.js"></script>
 
     <script>
         $(document).ready(function(){

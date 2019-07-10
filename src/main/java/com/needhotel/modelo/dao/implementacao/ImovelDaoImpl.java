@@ -89,13 +89,15 @@ public class ImovelDaoImpl implements ImovelDao {
 
     @Override
     public List<Imovel> buscarPorNome(String nome) {
-        String query = "SELECT * FROM imovel WHERE nome = ?";
-        List<Imovel> imoveis =  new ArrayList<>();
+        String query = "SELECT * FROM imovel WHERE nome ILIKE ?";
+        List<Imovel> imoveis;
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, nome);
             ResultSet resultSet = statement.executeQuery();
-            return imoveis = setListaImoveis(resultSet);
+            imoveis = setListaImoveis(resultSet);
+            return imoveis;
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -104,13 +106,14 @@ public class ImovelDaoImpl implements ImovelDao {
 
     @Override
     public List<Imovel> buscarPorCidade(String cidade) {
-        String query = "SELECT * FROM imovel WHERE cidade = ?";
-        List<Imovel> imoveis = new ArrayList<>();
+        String query = "SELECT * FROM imovel WHERE cidade ILIKE ?";
+        List<Imovel> imoveis;
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, cidade);
             ResultSet resultSet = statement.executeQuery();
-            return imoveis = setListaImoveis(resultSet);
+            imoveis = setListaImoveis(resultSet);
+            return imoveis;
         } catch (SQLException e) {
             e.printStackTrace();
         }

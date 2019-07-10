@@ -76,7 +76,7 @@ public class CadastroImovelServlet extends HttpServlet {
                     }
                 }
 
-                //Salva o imovel no banco
+                //Salva o imovelno banco
                 imovelDao.cadastrarImovel(imovel);
 
                 //Salva as comodidades no banco
