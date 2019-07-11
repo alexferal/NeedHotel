@@ -138,7 +138,7 @@
                 </div>
 
                 <div class="input-field col s12">
-                    <input required name="descricaoImovel" id="descricaoImovel" class="validate inputs words" type="text" placeholder="Ex.: ED. Rozana Soares">
+                    <textarea maxlength="500" required name="descricaoImovel" id="descricaoImovel" class="materialize-textarea words" type="text"></textarea>
                     <label for="nomeImovel">Descrição do Imóvel</label>
                 </div>
 
@@ -164,6 +164,8 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="js/materialize.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/jquery.mask.min.js"></script>
+    <script src="js/validacao.js"></script>
 
     <script>
         $(document).ready(function(){

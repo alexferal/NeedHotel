@@ -137,6 +137,11 @@
                     <label>Comodidades</label>
                 </div>
 
+                <div class="input-field col s12">
+                    <textarea maxlength="10" required name="descricaoImovel" id="descricaoImovel" class="materialize-textarea words" type="text"></textarea>
+                    <label for="nomeImovel">Descrição do Imóvel</label>
+                </div>
+
                     <%--          Input fotos            --%>
                 <div class="file-field input-field col s12">
                     <div class="btn">
@@ -159,6 +164,8 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="js/materialize.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="js/jquery.mask.min.js"></script>
+    <script src="js/validacao.js"></script>
 
     <script>
         $(document).ready(function(){

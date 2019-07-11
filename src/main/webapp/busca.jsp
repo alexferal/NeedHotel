@@ -35,12 +35,12 @@
             <div class="col s12 m7">
                 <div class="card horizontal small z-depth-4">
                     <div class="card-image">
-                        <img src="imagem/${imovel.foto}">
+                        <img src="imagem/${imovel.foto}" id="CardImage">
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
-                            <h4 id="nomeImovel">${imovel.nome}</h4>
-                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                            <h5 id="nomeImovel">${imovel.nome}</h5>
+                            <p>${imovel.descricao}</p>
                         </div>
                         <div class="card-action">
                             <p>Valor da Diária - R$:${imovel.valor}</p>
