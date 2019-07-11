@@ -47,6 +47,7 @@ public class CadastroImovelServlet extends HttpServlet {
                 req.getRequestDispatcher("cadastroImovel.jsp?etapaForm=2").forward(req, resp);
             } else if (req.getParameter("etapaForm").equals("2")){
                 Imovel imovel = (Imovel)session.getAttribute("etapa1");
+                imovel.setDescricao(req.getParameter("descricaoImovel"));
                 String[] lista = req.getParameterValues("comidadesImovel");
 
                 if (ServletFileUpload.isMultipartContent(req)){

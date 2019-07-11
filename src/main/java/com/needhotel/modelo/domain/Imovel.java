@@ -17,12 +17,13 @@ public class Imovel {
     private Float valor;
     private boolean disponibilidade;
     private String foto;
+    private String descricao;
 
     public Imovel() {
         id = String.valueOf(ZonedDateTime.now().toInstant().getEpochSecond());
     }
 
-    public Imovel(String proprietario, String nome, String rua, String bairro, String numero, String cep, String cidade, String estado, Float valor, boolean disponibilidade, String foto){
+    public Imovel(String proprietario, String nome, String rua, String bairro, String numero, String cep, String cidade, String estado, Float valor, boolean disponibilidade, String foto, String descricao){
         this.bairro = bairro;
         this.numero = numero;
         this.cep = cep;
@@ -129,6 +130,14 @@ public class Imovel {
         this.foto = foto;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     @Override
     public String toString() {
         return "Imovel{" +
@@ -144,6 +153,7 @@ public class Imovel {
                 ", valor=" + valor +
                 ", disponibilidade=" + disponibilidade +
                 ", foto='" + foto + '\'' +
+                ", descricao='" + descricao + '\'' +
                 '}';
     }
 }

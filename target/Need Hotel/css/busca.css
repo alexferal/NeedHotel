@@ -16,7 +16,11 @@
     width: 120px;
 }
 
-#cardImovel{
-    height: 200px;
+#nomeImovel{
+    margin-top: 10px;
+    text-transform: capitalize;
 }
+
+
+
 

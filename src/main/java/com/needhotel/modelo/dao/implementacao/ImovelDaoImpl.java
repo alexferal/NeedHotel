@@ -21,8 +21,8 @@ public class ImovelDaoImpl implements ImovelDao {
 
     @Override
     public Boolean cadastrarImovel(Imovel imovel) {
-        String query = "INSERT INTO imovel(id, proprietario, nome, rua, bairro, numero, cep, cidade, estado, valor, disponibilidade, foto) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO imovel(id, proprietario, nome, rua, bairro, numero, cep, cidade, estado, valor, disponibilidade, foto, descricao) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, imovel.getId());
@@ -74,7 +74,7 @@ public class ImovelDaoImpl implements ImovelDao {
     @Override
     public Boolean atualizarImovel(String id, Imovel imovel) {
         String query = "UPDATE imovel" +
-                " SET id=?, proprietario=?, nome=?, rua=?, bairro=?, numero=?, cep=?, cidade=?, estado=?, valor=?, disponibilidade=?, foto=?";
+                " SET id=?, proprietario=?, nome=?, rua=?, bairro=?, numero=?, cep=?, cidade=?, estado=?, valor=?, disponibilidade=?, foto=?, descricao=?";
         try(Connection connection = factory.getConnection()){
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, id);
@@ -150,6 +150,7 @@ public class ImovelDaoImpl implements ImovelDao {
             imovel.setValor(resultSet.getFloat("valor"));
             imovel.setDisponibilidade(resultSet.getBoolean("disponibilidade"));
             imovel.setFoto(resultSet.getString("foto"));
+            imovel.setDescricao(resultSet.getString("descricao"));
             imoveis.add(imovel);
         }
         return imoveis;
@@ -185,6 +186,7 @@ public class ImovelDaoImpl implements ImovelDao {
         statement.setFloat(10, imovel.getValor());
         statement.setBoolean(11, imovel.isDisponibilidade());
         statement.setString(12, imovel.getFoto());
+        statement.setString(13, imovel.getDescricao());
         return statement;
     }
 }

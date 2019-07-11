@@ -137,6 +137,11 @@
                     <label>Comodidades</label>
                 </div>
 
+                <div class="input-field col s12">
+                    <input required name="descricaoImovel" id="descricaoImovel" class="validate inputs words" type="text" placeholder="Ex.: ED. Rozana Soares">
+                    <label for="nomeImovel">Descrição do Imóvel</label>
+                </div>
+
                     <%--          Input fotos            --%>
                 <div class="file-field input-field col s12">
                     <div class="btn">

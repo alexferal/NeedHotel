@@ -32,19 +32,22 @@
     <c:if test="${not empty imoveis}">
         <h5 class="center">Resultados</h5>
         <c:forEach items="${imoveis}" var="imovel">
-<%--            <div class="row">--%>
-<%--                <div class="col s6 m3">--%>
-<%--                    <div class="card small" id="cardImovel">--%>
-<%--                        <div class="card-image">--%>
-<%--                            <img src="imagem/${imovel.foto}">--%>
-<%--                            <span class="card-title">${imovel.nome}</span>--%>
-<%--                        </div>--%>
-<%--                        <div class="card-content">--%>
-<%--                            <p>Valor da Diária: ${imovel.valor}</p>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
+            <div class="col s12 m7">
+                <div class="card horizontal small z-depth-4">
+                    <div class="card-image">
+                        <img src="imagem/${imovel.foto}">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h4 id="nomeImovel">${imovel.nome}</h4>
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                            <p>Valor da Diária - R$:${imovel.valor}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </c:forEach>
     </c:if>
 
