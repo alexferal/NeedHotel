@@ -12,4 +12,5 @@ public interface UsuarioDAO {
     Boolean atualizarUsuario(String cpf, Usuario usuario);
     List<Usuario> getUsuarios();
 
+    Usuario buscarPorID(String proprietario);
 }

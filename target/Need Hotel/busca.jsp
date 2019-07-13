@@ -10,12 +10,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Need Hotel</title>
     <link href="css/materialize.css" type="text/css" rel="stylesheet"/>
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
     <link type="text/css" rel="stylesheet" href="css/busca.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title></title>
 </head>
 <body class="blue-grey darken-1">
     <c:import url="menu.jsp"></c:import>
@@ -46,10 +45,11 @@
                             <h5 id="nomeImovel">${imovel.nome}</h5>
                             <p>${imovel.cidade}-${imovel.estado}</p>
                             <p>${imovel.rua}</p>
+                            <p>Valor da Diária - R$:${imovel.valor}</p>
                         </div>
-<%--                        <div class="card-action">--%>
-<%--                            <p>Valor da Diária - R$:${imovel.valor}</p>--%>
-<%--                        </div>--%>
+                        <div class="card-action">
+                            <a href="perfilImovel?id=${imovel.id}" class="btn-floating waves-effect waves-light black" style="float: right"><i class="material-icons">navigate_next</i></a>
+                        </div>
                     </div>
                 </div>
             </div>
