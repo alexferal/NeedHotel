@@ -17,7 +17,7 @@
     <link type="text/css" rel="stylesheet" href="css/cadastro.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8"/>
-    <title>Cadastro</title>
+    <title>Need Hotel</title>
 </head>
 <body class="blue-grey darken-1">
     <div >
@@ -25,10 +25,10 @@
             <h4>Cadastro</h4>
             <c:if test="${param.etapaForm eq '1'}">
                 <h6>Dados Pessoais</h6>
-                <c:if test="${param.erro eq 'cpf'}">
-                    <h6 class="red-text" onload=""><i class="material-icons tiny">info</i>Já existe </h6>
-                </c:if>
                 <form class="center" action="cadastrar?etapaForm=1" method="post" onsubmit="return validaFormUsuario(this);">
+                    <c:if test="${param.erro eq 'cpf'}">
+                        <h6 class="red-text" onload=""><i class="material-icons tiny">info</i>CPF já foi cadastrado!</h6>
+                    </c:if>
                     <div class="row container">
                             <%--          Input nome            --%>
                         <div class="input-field col s12">
@@ -70,6 +70,9 @@
             <c:if test="${param.etapaForm eq '2'}">
                 <h6>Conta</h6>
                 <form class="center" action="cadastrar?etapaForm=2" method="post" enctype="multipart/form-data" onsubmit="return validaSenha(this);">
+                    <c:if test="${param.erro eq 'email'}">
+                        <h6 class="red-text" onload=""><i class="material-icons tiny">info</i>Email já foi cadastrado!</h6>
+                    </c:if>
                     <div class="row container">
                         <div class="file-field input-field col s12">
                             <div class="btn">

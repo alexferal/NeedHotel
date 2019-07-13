@@ -148,7 +148,23 @@ public class UsuarioDaoImpl implements UsuarioDAO {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, cpf);
 
-            ResultSet resultSet = statement.executeQuery(query);
+            ResultSet resultSet = statement.executeQuery();
+
+            return resultSet.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public Boolean verificarEmail(String email){
+        String query = "SELECT * FROM usuario WHERE email = ?";
+
+        try (Connection connection = factory.getConnection()){
+
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, email);
+            ResultSet resultSet = statement.executeQuery();
 
             return resultSet.next();
         } catch (SQLException e) {

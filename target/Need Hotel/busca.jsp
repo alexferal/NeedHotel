@@ -47,9 +47,9 @@
                             <p>${imovel.cidade}-${imovel.estado}</p>
                             <p>${imovel.rua}</p>
                         </div>
-<%--                        <div class="card-action">--%>
-<%--                            <p>Valor da Diária - R$:${imovel.valor}</p>--%>
-<%--                        </div>--%>
+                        <div class="card-action">
+                            <p>Valor da Diária - R$:${imovel.valor}</p>
+                        </div>
                     </div>
                 </div>
             </div>

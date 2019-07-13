@@ -152,7 +152,7 @@
                     </div>
                 </div>
                 <div class="modal-footer center col s12">
-                    <a href="cadastrarImovel?voltar=2" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                    <a href="cadastrarImovel?voltar=2" class="modal-close waves-effect waves-green btn-flat">Voltar</a>
                     <button class="btn waves-effect waves-light" type="submit" name="action">Concluir</button>
                 </div>
 

@@ -31,7 +31,7 @@ import java.util.List;
 public class CadastroServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-
+        req.getRequestDispatcher("cadastro.jsp?etapaForm=1").forward(req, resp);
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -54,37 +54,42 @@ public class CadastroServlet extends HttpServlet {
                 session.setAttribute("firstRegister", usuario);
                 req.getRequestDispatcher("cadastro.jsp?etapaForm=2").forward(req, resp);
             } else {
-                req.getRequestDispatcher("cadastro.jsp?etapaForm=2&erro=cpf").forward(req, resp);
+                req.getRequestDispatcher("cadastro.jsp?etapaForm=1&erro=cpf").forward(req, resp);
             }
 
 
         }else if (req.getParameter("etapaForm").equals("2")){
-            Usuario usuario = (Usuario)session.getAttribute("firstRegister");
 
-            usuario.setEmail(req.getParameter("email"));
-            usuario.setSenha(req.getParameter("senha"));
-            if (ServletFileUpload.isMultipartContent(req)){
+            if (!usuarioDaoImpl.verificarEmail(req.getParameter("email"))){
+                Usuario usuario = (Usuario)session.getAttribute("firstRegister");
 
-                String uploadPath = getServletContext().getRealPath("") + File.separator + "imagem";
-                File uploadDir = new File(uploadPath);
+                usuario.setEmail(req.getParameter("email"));
+                usuario.setSenha(req.getParameter("senha"));
+                if (ServletFileUpload.isMultipartContent(req)){
 
-                if (!uploadDir.exists())
-                    uploadDir.mkdir();
+                    String uploadPath = getServletContext().getRealPath("") + File.separator + "imagem";
+                    File uploadDir = new File(uploadPath);
 
-                List<String> foto = new ArrayList<>();
-                for (Part part : req.getParts()) {
-                    if (part.getContentType() != null){
-                        String fileName = getFileName(part);
-                        String nomeFoto = ZonedDateTime.now().toInstant().getEpochSecond() + fileName.substring(fileName.indexOf('.'));
-                        foto.add(nomeFoto);
-                        part.write(uploadPath + File.separator + nomeFoto);
+                    if (!uploadDir.exists())
+                        uploadDir.mkdir();
+
+                    List<String> foto = new ArrayList<>();
+                    for (Part part : req.getParts()) {
+                        if (part.getContentType() != null){
+                            String fileName = getFileName(part);
+                            String nomeFoto = ZonedDateTime.now().toInstant().getEpochSecond() + fileName.substring(fileName.indexOf('.'));
+                            foto.add(nomeFoto);
+                            part.write(uploadPath + File.separator + nomeFoto);
+                        }
                     }
+                    usuario.setFotoPerfil(foto.get(0));
                 }
-                usuario.setFotoPerfil(foto.get(0));
+                usuarioDaoImpl.cadastrarUsuario(usuario);
+                session.setAttribute("firstRegister", null);
+                req.getRequestDispatcher("login.jsp").forward(req, resp);
+            }else {
+                req.getRequestDispatcher("cadastro.jsp?etapaForm=2&erro=email").forward(req, resp);
             }
-            usuarioDaoImpl.cadastrarUsuario(usuario);
-            session.setAttribute("firstRegister", null);
-            req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
     }
 
