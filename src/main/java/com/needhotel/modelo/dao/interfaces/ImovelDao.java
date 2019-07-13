@@ -11,6 +11,7 @@ public interface ImovelDao {
     Boolean deletarImovel(String id);
     Boolean atualizarImovel(String id, Imovel imovel);
     List<Imovel> buscarPorNome(String nome);
+    Imovel buscarPorID(String nome);
     List<Imovel> buscarPorCidade(String cidade);
     Boolean cadastrarComodidades(String comodidade, String imovel);
 

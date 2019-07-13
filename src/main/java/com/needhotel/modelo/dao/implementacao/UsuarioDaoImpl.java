@@ -141,6 +141,25 @@ public class UsuarioDaoImpl implements UsuarioDAO {
         return null;
     }
 
+    @Override
+    public Usuario buscarPorID(String proprietario) {
+        String query = "SELECT * FROM usuario WHERE cpf ILIKE ?";
+        try(Connection connection = factory.getConnection()){
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, proprietario);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()){
+                Usuario usuario = new Usuario();
+                usuario.setNome(resultSet.getString("nome"));
+                usuario.setFotoPerfil(resultSet.getString("foto"));
+                return usuario;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public Boolean verificaCpf(String cpf){
         String query = "SELECT * FROM usuario WHERE cpf = ?";
 

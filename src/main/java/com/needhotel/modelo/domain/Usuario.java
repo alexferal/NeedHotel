@@ -101,6 +101,7 @@ public class Usuario {
                 ", dataNascimento=" + dataNascimento +
                 ", email='" + email + '\'' +
                 ", senha='" + senha + '\'' +
+                ", fotoPerfil='" + fotoPerfil + '\'' +
                 '}';
     }
 }

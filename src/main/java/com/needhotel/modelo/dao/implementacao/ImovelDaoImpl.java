@@ -105,6 +105,36 @@ public class ImovelDaoImpl implements ImovelDao {
     }
 
     @Override
+    public Imovel buscarPorID(String nome) {
+        String query = "SELECT * FROM imovel WHERE id ILIKE ?";
+        try(Connection connection = factory.getConnection()){
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, nome);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()){
+                Imovel imovel = new Imovel();
+                imovel.setId(resultSet.getString("id"));
+                imovel.setProprietario(resultSet.getString("proprietario"));
+                imovel.setNome(resultSet.getString("nome"));
+                imovel.setRua(resultSet.getString("rua"));
+                imovel.setBairro(resultSet.getString("bairro"));
+                imovel.setNumero(resultSet.getString("numero"));
+                imovel.setCep(resultSet.getString("cep"));
+                imovel.setCidade(resultSet.getString("cidade"));
+                imovel.setEstado(resultSet.getString("estado"));
+                imovel.setValor(resultSet.getFloat("valor"));
+                imovel.setDisponibilidade(resultSet.getBoolean("disponibilidade"));
+                imovel.setFoto(resultSet.getString("foto"));
+                imovel.setDescricao(resultSet.getString("descricao"));
+                return imovel;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
     public List<Imovel> buscarPorCidade(String cidade) {
         String query = "SELECT * FROM imovel WHERE cidade ILIKE ?";
         List<Imovel> imoveis;
