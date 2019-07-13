@@ -24,7 +24,7 @@
             <div class="carousel-fixed-item center">
 
                 <%--        Elemento fixo ao centro do slide        --%>
-                <form class="col s8 offset-s2 white row" action="buscar" onsubmit="return validaPesquisa(this);" style="border-radius: 10px; height: 45px;">
+                <form class="col s8 offset-s2 white row" action="buscar" style="border-radius: 10px; height: 45px;">
                     <input class="col s10" id="search" type="text" placeholder="Cidades, Hoteis, ..." name="search">
                     <button name="action" class="col s2 btn-flat" style="height: 45px;"><i class="Small material-icons black-text">search</i></button>
                 </form>

@@ -5,7 +5,8 @@
   Time: 21:25
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
@@ -14,9 +15,12 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
     <link type="text/css" rel="stylesheet" href="css/busca.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title></title>
 </head>
-<body>
+<body class="blue-grey darken-1">
     <c:import url="menu.jsp"></c:import>
+
+    <div class="container white" style="border-radius: 10px; padding: 20px;">
 
     <%--        Elemento fixo ao centro do slide        --%>
     <form class="col s8 offset-s2 white row" action="buscar" id="formSearch">
@@ -33,25 +37,27 @@
         <h5 class="center">Resultados</h5>
         <c:forEach items="${imoveis}" var="imovel">
             <div class="col s12 m7">
-                <div class="card horizontal small z-depth-4">
+                <div class="card horizontal z-depth-4">
                     <div class="card-image">
-                        <img src="imagem/${imovel.foto}">
+                        <img src="imagem/${imovel.foto}" id="CardImage">
                     </div>
                     <div class="card-stacked">
                         <div class="card-content">
-                            <h4 id="nomeImovel">${imovel.nome}</h4>
-                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                            <h5 id="nomeImovel">${imovel.nome}</h5>
+                            <p>${imovel.cidade}-${imovel.estado}</p>
+                            <p>${imovel.rua}</p>
                         </div>
-                        <div class="card-action">
-                            <p>Valor da Di√°ria - R$:${imovel.valor}</p>
-                        </div>
+<%--                        <div class="card-action">--%>
+<%--                            <p>Valor da Di·ria - R$:${imovel.valor}</p>--%>
+<%--                        </div>--%>
                     </div>
                 </div>
             </div>
         </c:forEach>
     </c:if>
+    </div>
 
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="js/materialize.js"/>
 <script src="js/materialize.min.js"></script>

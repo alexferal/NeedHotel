@@ -5,11 +5,9 @@
   Time: 12:17
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib
-        prefix="c"
-        uri="http://java.sun.com/jsp/jstl/core"
-%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Need Hotel</title>
@@ -17,6 +15,7 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/cadastroImovel.css" rel="stylesheet">
+    <meta charset="UTF-8"/>
 </head>
 <body class="blue-grey darken-1">
 
@@ -29,19 +28,19 @@
                 <%--          Input nome do imovel          --%>
                 <div class="input-field col s12">
                     <input required  value="${dadosEtapa1.nome}" name="nomeImovel" id="nomeImovel" class="validate inputs words" type="text" placeholder="Ex.: ED. Rozana Soares">
-                    <label for="nomeImovel">Nome do Im√≥vel</label>
+                    <label for="nomeImovel">Nome do ImÛvel</label>
                 </div>
 
                 <%--          Input rua          --%>
                 <div class="input-field col s12">
                     <input required value="${dadosEtapa1.rua}"name="ruaImovel" id="nomeRua" class="validate inputs words" type="text" placeholder="Ex.: rua Santa Cecilia">
-                    <label for="nomeRua">Rua do Im√≥vel</label>
+                    <label for="nomeRua">Rua do ImÛvel</label>
                 </div>
 
-                <%--          Input n√∫mero do imovel          --%>
+                <%--          Input n˙mero do imovel          --%>
                 <div class="input-field col s6">
                     <input required value="${dadosEtapa1.numero}" name="numeroImovel" id="numImovel" class="validate inputs numero" type="text" placeholder="Ex.: 123">
-                    <label for="numImovel">N√∫mero</label>
+                    <label for="numImovel">N˙mero</label>
                 </div>
 
                 <%--          Input CEP          --%>
@@ -58,7 +57,7 @@
 
                 <%--          Input cidade          --%>
                 <div class="input-field col s6">
-                    <input required value="${dadosEtapa1.cidade}"  name="cidadeImovel" id="nomeCidades" class="validate inputs words" type="text" placeholder="Ex.: Cidadop√≥lis">
+                    <input required value="${dadosEtapa1.cidade}"  name="cidadeImovel" id="nomeCidades" class="validate inputs words" type="text" placeholder="Ex.: CidadopÛlis">
                     <label for="nomeCidades">Cidade</label>
                 </div>
 
@@ -74,31 +73,31 @@
                         <optgroup label="Nordeste">
                             <option value="AL" <c:if test="${dadosEtapa1.estado eq 'AL'}">selected</c:if>>Alagoas</option>
                             <option value="BA" <c:if test="${dadosEtapa1.estado eq 'BA'}">selected</c:if>>Bahia</option>
-                            <option value="CE" <c:if test="${dadosEtapa1.estado eq 'CE'}">selected</c:if>>Cear√°</option>
-                            <option value="MA" <c:if test="${dadosEtapa1.estado eq 'MA'}">selected</c:if>>Maranh√£o</option>
-                            <option value="PB" <c:if test="${dadosEtapa1.estado eq 'PB'}">selected</c:if>>Para√≠ba</option>
+                            <option value="CE" <c:if test="${dadosEtapa1.estado eq 'CE'}">selected</c:if>>Cear·</option>
+                            <option value="MA" <c:if test="${dadosEtapa1.estado eq 'MA'}">selected</c:if>>Maranh„o</option>
+                            <option value="PB" <c:if test="${dadosEtapa1.estado eq 'PB'}">selected</c:if>>ParaÌba</option>
                             <option value="PE" <c:if test="${dadosEtapa1.estado eq 'PE'}">selected</c:if>>Pernambuco</option>
-                            <option value="PI" <c:if test="${dadosEtapa1.estado eq 'PI'}">selected</c:if>>Piau√≠</option>
+                            <option value="PI" <c:if test="${dadosEtapa1.estado eq 'PI'}">selected</c:if>>PiauÌ</option>
                             <option value="RN" <c:if test="${dadosEtapa1.estado eq 'RN'}">selected</c:if>>Rio Grande do Norte</option>
                             <option value="SE" <c:if test="${dadosEtapa1.estado eq 'SE'}">selected</c:if>>Sergipe</option>
                         </optgroup>
                         <optgroup label="Norte">
                             <option value="AC" <c:if test="${dadosEtapa1.estado eq 'AC'}">selected</c:if>>Acre</option>
-                            <option value="AP" <c:if test="${dadosEtapa1.estado eq 'AP'}">selected</c:if>>Amap√°</option>
+                            <option value="AP" <c:if test="${dadosEtapa1.estado eq 'AP'}">selected</c:if>>Amap·</option>
                             <option value="AM" <c:if test="${dadosEtapa1.estado eq 'AM'}">selected</c:if>>Amazonas</option>
-                            <option value="PA" <c:if test="${dadosEtapa1.estado eq 'PA'}">selected</c:if>>Par√°</option>
-                            <option value="RO" <c:if test="${dadosEtapa1.estado eq 'RO'}">selected</c:if>>Rond√¥nia</option>
+                            <option value="PA" <c:if test="${dadosEtapa1.estado eq 'PA'}">selected</c:if>>Par·</option>
+                            <option value="RO" <c:if test="${dadosEtapa1.estado eq 'RO'}">selected</c:if>>RondÙnia</option>
                             <option value="RR" <c:if test="${dadosEtapa1.estado eq 'RR'}">selected</c:if>>Roraima</option>
                             <option value="TO" <c:if test="${dadosEtapa1.estado eq 'TO'}">selected</c:if>>Tocantins</option>
                         </optgroup>
                         <optgroup label="Sudeste">
-                            <option value="ES" <c:if test="${dadosEtapa1.estado eq 'ES'}">selected</c:if>>Esp√≠rito Santo</option>
+                            <option value="ES" <c:if test="${dadosEtapa1.estado eq 'ES'}">selected</c:if>>EspÌrito Santo</option>
                             <option value="MG" <c:if test="${dadosEtapa1.estado eq 'MG'}">selected</c:if>>Minas Gerais</option>
                             <option value="RJ" <c:if test="${dadosEtapa1.estado eq 'RJ'}">selected</c:if>>Rio de Janeiro</option>
-                            <option value="SP" <c:if test="${dadosEtapa1.estado eq 'SP'}">selected</c:if>>S√£o Paulo</option>
+                            <option value="SP" <c:if test="${dadosEtapa1.estado eq 'SP'}">selected</c:if>>S„o Paulo</option>
                         </optgroup>
                         <optgroup label="Sul">
-                            <option value="PR" <c:if test="${dadosEtapa1.estado eq 'PR'}">selected</c:if>>Paran√°</option>
+                            <option value="PR" <c:if test="${dadosEtapa1.estado eq 'PR'}">selected</c:if>>Paran·</option>
                             <option value="RS" <c:if test="${dadosEtapa1.estado eq 'RS'}">selected</c:if>>Rio Grande do Sul</option>
                             <option value="SC" <c:if test="${dadosEtapa1.estado eq 'SC'}">selected</c:if>>Santa Catarina</option>
                         </optgroup>
@@ -106,7 +105,7 @@
                     <label for="selectEstado">Estados</label>
                 </div>
 
-                <%--          Input pre√ßo          --%>
+                <%--          Input preÁo          --%>
                 <div class="input-field col s12">
                     <input required value="${dadosEtapa1.valor}"  name="valorImovel" id="valorDiaria" class="validate inputs valor" type="text" placeholder="Ex.: 500,00">
                     <label for="valorDiaria">Diaria</label>
@@ -114,7 +113,7 @@
 
                 <div class="modal-footer center">
                     <a href="home.jsp" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Pr√≥ximo</button>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">PrÛximo</button>
                 </div>
 
             </form>
@@ -126,7 +125,7 @@
                     <%--         Select Comodidades          --%>
                 <div class="input-field col s5">
                     <select multiple name="comidadesImovel">
-                        <option value="" disabled selected>Escolha uma op√ß√£o</option>
+                        <option value="" disabled selected>Escolha uma opÁ„o</option>
                         <option value="Aquecimento Central">Aquecimento Central</option>
                         <option value="Elevador">Elevador</option>
                         <option value="Wifi">Wifi</option>
@@ -138,8 +137,8 @@
                 </div>
 
                 <div class="input-field col s12">
-                    <textarea maxlength="10" required name="descricaoImovel" id="descricaoImovel" class="materialize-textarea words" type="text"></textarea>
-                    <label for="nomeImovel">Descri√ß√£o do Im√≥vel</label>
+                    <textarea maxlength="500" required name="descricaoImovel" id="descricaoImovel" class="materialize-textarea words" type="text"></textarea>
+                    <label for="nomeImovel">DescriÁ„o do ImÛvel</label>
                 </div>
 
                     <%--          Input fotos            --%>
@@ -149,7 +148,7 @@
                         <input type="file" name="fotosImovel" accept="image/*">
                     </div>
                     <div class="file-path-wrapper">
-                        <input required class="file-path validate" type="text" placeholder="Fa√ßa o upload das fotos do im√≥vel aqui">
+                        <input required class="file-path validate" type="text" placeholder="FaÁa o upload das fotos do imÛvel aqui">
                     </div>
                 </div>
                 <div class="modal-footer center col s12">
