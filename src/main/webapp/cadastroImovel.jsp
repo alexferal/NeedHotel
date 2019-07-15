@@ -137,7 +137,7 @@
                 </div>
 
                 <div class="input-field col s12">
-                    <textarea maxlength="500" required name="descricaoImovel" id="descricaoImovel" class="materialize-textarea words" type="text"></textarea>
+                    <textarea maxlength="500" required name="descricaoImovel" id="descricaoImovel" class="materialize-textarea" type="text"></textarea>
                     <label for="nomeImovel">Descrição do Imóvel</label>
                 </div>
 

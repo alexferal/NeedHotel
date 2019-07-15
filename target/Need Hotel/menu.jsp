@@ -44,7 +44,7 @@
                             <div class="collapsible-body">
                                 <ul>
                                     <li><a href="cadastroImovel.jsp?etapaForm=1"><i class="material-icons black-text">add_circle</i>Cadastrar Imóvel</a></li>
-                                    <li><a href="#!"><i class="material-icons black-text">view_moduleMeu</i>Imóveis</a></li>
+                                    <li><a href="#!"><i class="material-icons black-text">view_module</i>Meus Imóveis</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -54,7 +54,7 @@
                 <li><a href="logout" class="no-padding"><i class="material-icons black-text">exit_to_app</i>Logout</a></li>
                 <li><div class="divider"></div></li>
                 <li><a href="#!" class="no-padding"><i class="material-icons black-text">home</i>Home</a></li>
-                <li><a href="#! class="no-padding""><i class="material-icons black-text">info</i>Sobre</a></li>
+                <li><a href="#!" class="no-padding"><i class="material-icons black-text">info</i>Sobre</a></li>
             </ul>
         </div>
 

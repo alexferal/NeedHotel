@@ -45,11 +45,9 @@
                 </div>
             </div>
             <div class="col s12 row" style="margin-top: 5vw;">
-                <h2 class="left-align">Imóveis</h2>
+                <h4 class="left-align">Gerenciar Imóveis</h4>
                 <div class="s12">
-<%--                    <c:forEach var="imovel" items="imoveis">--%>
-<%--                        --%>
-<%--                    </c:forEach>--%>
+                    <%--         Adicionar atalhos para gerenciamento (ver, criar e editar)           --%>
                 </div>
             </div>
         </div>

@@ -18,12 +18,13 @@ public class Imovel {
     private boolean disponibilidade;
     private String foto;
     private String descricao;
+    private List<String> comodidades;
 
     public Imovel() {
         id = String.valueOf(ZonedDateTime.now().toInstant().getEpochSecond());
     }
 
-    public Imovel(String proprietario, String nome, String rua, String bairro, String numero, String cep, String cidade, String estado, Float valor, boolean disponibilidade, String foto, String descricao){
+    public Imovel(String proprietario, String nome, String rua, String bairro, String numero, String cep, String cidade, String estado, Float valor, boolean disponibilidade, String foto, String descricao, List<String> comodidades){
         this.bairro = bairro;
         this.numero = numero;
         this.cep = cep;
@@ -32,6 +33,8 @@ public class Imovel {
         this.valor = valor;
         this.disponibilidade = disponibilidade;
         this.foto = foto;
+        this.descricao = descricao;
+        this.comodidades = comodidades;
     }
 
     public String getId() {
@@ -138,6 +141,15 @@ public class Imovel {
         this.descricao = descricao;
     }
 
+    public List<String> getComodidades() {
+        return comodidades;
+    }
+
+    public void setComodidades(List<String> comodidades) {
+        this.comodidades = comodidades;
+    }
+
+
     @Override
     public String toString() {
         return "Imovel{" +
@@ -154,6 +166,7 @@ public class Imovel {
                 ", disponibilidade=" + disponibilidade +
                 ", foto='" + foto + '\'' +
                 ", descricao='" + descricao + '\'' +
+                ", comodidades=" + comodidades +
                 '}';
     }
 }

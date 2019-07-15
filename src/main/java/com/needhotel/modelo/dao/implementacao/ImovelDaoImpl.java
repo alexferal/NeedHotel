@@ -112,20 +112,7 @@ public class ImovelDaoImpl implements ImovelDao {
             statement.setString(1, nome);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()){
-                Imovel imovel = new Imovel();
-                imovel.setId(resultSet.getString("id"));
-                imovel.setProprietario(resultSet.getString("proprietario"));
-                imovel.setNome(resultSet.getString("nome"));
-                imovel.setRua(resultSet.getString("rua"));
-                imovel.setBairro(resultSet.getString("bairro"));
-                imovel.setNumero(resultSet.getString("numero"));
-                imovel.setCep(resultSet.getString("cep"));
-                imovel.setCidade(resultSet.getString("cidade"));
-                imovel.setEstado(resultSet.getString("estado"));
-                imovel.setValor(resultSet.getFloat("valor"));
-                imovel.setDisponibilidade(resultSet.getBoolean("disponibilidade"));
-                imovel.setFoto(resultSet.getString("foto"));
-                imovel.setDescricao(resultSet.getString("descricao"));
+                Imovel imovel = getResult(resultSet);
                 return imovel;
             }
         } catch (SQLException e) {
@@ -167,7 +154,15 @@ public class ImovelDaoImpl implements ImovelDao {
     private List<Imovel> setListaImoveis(ResultSet resultSet) throws SQLException {
         List<Imovel> imoveis = new ArrayList<>();
         while (resultSet.next()){
-            Imovel imovel = new Imovel();
+            Imovel imovel = getResult(resultSet);
+            imoveis.add(imovel);
+        }
+        return imoveis;
+    }
+
+    private Imovel getResult(ResultSet resultSet){
+        Imovel imovel = new Imovel();
+        try {
             imovel.setId(resultSet.getString("id"));
             imovel.setProprietario(resultSet.getString("proprietario"));
             imovel.setNome(resultSet.getString("nome"));
@@ -181,9 +176,12 @@ public class ImovelDaoImpl implements ImovelDao {
             imovel.setDisponibilidade(resultSet.getBoolean("disponibilidade"));
             imovel.setFoto(resultSet.getString("foto"));
             imovel.setDescricao(resultSet.getString("descricao"));
-            imoveis.add(imovel);
+            imovel.setComodidades(getComodidades(imovel.getId()));
+            return imovel;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return imoveis;
+        return null;
     }
 
     public List<String> getfotos(String imovel){
@@ -198,6 +196,24 @@ public class ImovelDaoImpl implements ImovelDao {
                 fotos.add(resultSet.getString("foto"));
             }
         return fotos;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private List<String> getComodidades(String imovel){
+        List<String> comodidades = new ArrayList<>();
+        String query = "SELECT recurso FROM comodidade WHERE id_imovel = ?";
+        try(Connection connection = factory.getConnection()){
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, imovel);
+            ResultSet resultSet = statement.executeQuery();
+
+            while(resultSet.next()){
+                comodidades.add(resultSet.getString("recurso"));
+            }
+            return comodidades;
         } catch (SQLException e) {
             e.printStackTrace();
         }

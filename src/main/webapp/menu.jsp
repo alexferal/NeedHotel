@@ -54,7 +54,7 @@
                 <li><a href="logout" class="no-padding"><i class="material-icons black-text">exit_to_app</i>Logout</a></li>
                 <li><div class="divider"></div></li>
                 <li><a href="#!" class="no-padding"><i class="material-icons black-text">home</i>Home</a></li>
-                <li><a href="#! class="no-padding""><i class="material-icons black-text">info</i>Sobre</a></li>
+                <li><a href="#!" class="no-padding"><i class="material-icons black-text">info</i>Sobre</a></li>
             </ul>
         </div>
 

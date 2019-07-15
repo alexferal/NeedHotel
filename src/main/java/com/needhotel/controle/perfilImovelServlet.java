@@ -22,6 +22,7 @@ public class perfilImovelServlet extends HttpServlet {
             String id = req.getParameter("id");
             Imovel imovel = imovelDao.buscarPorID(id);
             Usuario usuario = usuarioDao.buscarPorID(imovel.getProprietario());
+            System.out.println(imovel.toString());
             req.setAttribute("imovel", imovel);
             req.setAttribute("usuario", usuario);
             req.getRequestDispatcher("perfilImovel.jsp").forward(req, resp);
