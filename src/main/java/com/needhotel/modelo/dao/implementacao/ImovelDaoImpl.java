@@ -137,6 +137,24 @@ public class ImovelDaoImpl implements ImovelDao {
         return null;
     }
 
+    public List<Imovel> buscaPorUsuario(String idUsuario){
+        String query = "SELECT * FROM imovel WHERE proprietario = ?";
+        List<Imovel> imoveis;
+
+        try (Connection connection = factory.getConnection();){
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, idUsuario);
+            ResultSet resultSet = statement.executeQuery();
+            imoveis = setListaImoveis(resultSet);
+            return imoveis;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     @Override
     public Boolean cadastrarComodidades(String comodidade, String imovel) {
         String query = "INSERT INTO comodidade(id_imovel, recurso) VALUES (?,?)";
