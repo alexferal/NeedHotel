@@ -2,12 +2,35 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="NeedHotel:war exploded" />
+      <artifact name="NEEDHOTEL:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0795bb8b-a89c-4be7-a4cd-992eef751323" name="Default Changelist" comment="">
+    <list default="true" id="0795bb8b-a89c-4be7-a4cd-992eef751323" name="Default Changelist" comment="Criação das tabelas de Imovel e comodidades do imovel">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/controle/CadastroImovelServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/controle/CadastroImovelServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/conexao/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/conexao/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/busca.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/busca.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cadastro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cadastro.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cadastroImovel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cadastroImovel.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/listarImoveis.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listarImoveis.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/perfil.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/perfil.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/perfilImovel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/perfilImovel.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Need Hotel/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Need Hotel/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Need Hotel/busca.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Need Hotel/busca.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Need Hotel/cadastro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Need Hotel/cadastro.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Need Hotel/cadastroImovel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Need Hotel/cadastroImovel.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Need Hotel/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Need Hotel/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Need Hotel/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/Need Hotel/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Need Hotel/js/perfilImovel.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/Need Hotel/js/perfilImovel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Need Hotel/listarImoveis.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Need Hotel/listarImoveis.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Need Hotel/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Need Hotel/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Need Hotel/perfil.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Need Hotel/perfil.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Need Hotel/perfilImovel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Need Hotel/perfilImovel.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/NeedHotel.kotlin_module" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -71,7 +94,110 @@
     </checked>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/listarImoveis.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="645">
+              <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/needhotel/modelo/conexao/ConnectionFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/needhotel/controle/CadastroImovelServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/cadastro.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1560">
+              <caret line="104" column="67" selection-start-line="104" selection-start-column="67" selection-end-line="104" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/css/cadastro.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="3" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/css/listarImoveis.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/menu.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="46" column="61" selection-start-line="46" selection-start-column="61" selection-end-line="46" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/needhotel/controle/ListarImoveisServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="23" selection-start-line="23" selection-end-line="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/needhotel/modelo/domain/Imovel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="32" column="26" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="26" />
+              <folding>
+                <element signature="e#3110#3111#0" expanded="true" />
+                <element signature="e#3144#3145#0" expanded="true" />
+                <element signature="e#3204#3205#0" expanded="true" />
+                <element signature="e#3250#3251#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/needhotel/modelo/dao/implementacao/ImovelDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1950">
+              <caret line="141" column="29" selection-start-line="141" selection-start-column="29" selection-end-line="141" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -116,11 +242,9 @@
         <option value="$PROJECT_DIR$/scripts/script.sql" />
         <option value="$PROJECT_DIR$/src/main/webapp/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/cadastro.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/conexao/ConnectionFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/dao/implementacao/UsuarioDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/needhotel/controle/CadastroServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/needhotel/controle/CadastroImovelServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/cadastro.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/perfil.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/perfil.jsp" />
@@ -139,6 +263,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/css/listarImóveis.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/listarImoveis.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/listarImoveis.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/needhotel/modelo/conexao/ConnectionFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/needhotel/controle/CadastroImovelServlet.java" />
       </list>
     </option>
   </component>
@@ -172,122 +298,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="NeedHotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeedHotel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NeedHotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeedHotel" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NeedHotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeedHotel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NeedHotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeedHotel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NeedHotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeedHotel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NeedHotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeedHotel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="needhotel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NeedHotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeedHotel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="needhotel" type="462c0819:PsiDirectoryNode" />
-              <item name="controle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NeedHotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeedHotel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="needhotel" type="462c0819:PsiDirectoryNode" />
-              <item name="modelo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NeedHotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeedHotel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="needhotel" type="462c0819:PsiDirectoryNode" />
-              <item name="modelo" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NeedHotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeedHotel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="needhotel" type="462c0819:PsiDirectoryNode" />
-              <item name="modelo" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="implementacao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NeedHotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeedHotel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="needhotel" type="462c0819:PsiDirectoryNode" />
-              <item name="modelo" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NeedHotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeedHotel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NeedHotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeedHotel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NeedHotel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NeedHotel" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="NEEDHOTEL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NEEDHOTEL" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,15 +319,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Atividades/PW-Livros" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -319,12 +339,10 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 8.5.401" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.401" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/needhotel.com/" />
-      <option name="BROWSER_ID" value="53e2f627-b1a7-4dfa-bfa7-5b83cc034776" />
+    <configuration name="Tomcat 9.0.19" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.19" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="NeedHotel:war exploded">
+        <artifact name="NEEDHOTEL:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/needhotel.com" />
           </settings>
@@ -391,6 +409,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="NeedHotel:war exploded" />
+          <artifact name="NEEDHOTEL:war exploded" />
         </option>
       </method>
     </configuration>
@@ -430,8 +449,9 @@
       <workItem from="1563032690545" duration="187000" />
       <workItem from="1563032961711" duration="17898000" />
       <workItem from="1563137107728" duration="22426000" />
-      <workItem from="1563238724404" duration="4254000" />
-      <workItem from="1563385174263" duration="1737000" />
+      <workItem from="1563238724404" duration="3838000" />
+      <workItem from="1563385699479" duration="820000" />
+      <workItem from="1563388601141" duration="80000" />
     </task>
     <task id="LOCAL-00001" summary="Criação das tabelas de Imovel e comodidades do imovel">
       <created>1561593712651</created>
@@ -444,7 +464,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171058000" />
+    <option name="totallyTimeSpent" value="169805000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -456,9 +476,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="0" y="25" width="1366" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18532526" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18787879" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -468,17 +489,17 @@
       <window_info id="UI Designer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30392158" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3029316" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.32843137" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32843137" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32843137" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" weight="0.32843137" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.31699347" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.30392158" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32843137" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32736155" />
       <window_info anchor="bottom" id="Application Servers" order="13" sideWeight="0.49924356" weight="0.32686085" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.3267974" />
       <window_info anchor="bottom" id="Database Console" order="15" weight="0.32847896" />
@@ -529,32 +550,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -633,13 +628,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/cadastro.js" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/sql/Connection.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/needhotel/modelo/conexao/ConnectionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/needhotel/modelo/dao/implementacao/UsuarioDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
@@ -702,16 +690,6 @@
           <filtering>
             <filter text="" />
           </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/needhotel/controle/CadastroImovelServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="44" column="44" lean-forward="true" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -787,6 +765,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="78" lean-forward="true" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/home.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -825,51 +810,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/login.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/listarImoveis.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+        <state relative-caret-position="645">
+          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/listarImoveis.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/needhotel/modelo/conexao/ConnectionFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+        <state relative-caret-position="150">
+          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/cadastro.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
+        <state relative-caret-position="1560">
           <caret line="104" column="67" selection-start-line="104" selection-start-column="67" selection-end-line="104" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/cadastro.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="15">
           <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="3" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/listarImoveis.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="60">
           <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/menu.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
+        <state relative-caret-position="690">
           <caret line="46" column="61" selection-start-line="46" selection-start-column="61" selection-end-line="46" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/needhotel/controle/ListarImoveisServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="180">
           <caret line="23" selection-start-line="23" selection-end-line="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -879,7 +864,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/needhotel/modelo/domain/Imovel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
+        <state relative-caret-position="420">
           <caret line="32" column="26" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="26" />
           <folding>
             <element signature="e#3110#3111#0" expanded="true" />
@@ -892,8 +877,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/needhotel/modelo/dao/implementacao/ImovelDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
+        <state relative-caret-position="1950">
           <caret line="141" column="29" selection-start-line="141" selection-start-column="29" selection-end-line="141" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/needhotel/controle/CadastroImovelServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

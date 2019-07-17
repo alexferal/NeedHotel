@@ -63,6 +63,7 @@
                 indicators: true
             });
         </script>
+        <c:import url="rodape.jsp"></c:import>
 
     </body>
 </html>

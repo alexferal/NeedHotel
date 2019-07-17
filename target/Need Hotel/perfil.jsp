@@ -51,6 +51,7 @@
                 </div>
             </div>
         </div>
+        <c:import url="rodape.jsp"></c:import>
 
         
     </body>

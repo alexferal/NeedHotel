@@ -21,7 +21,7 @@ $(document).ready(function(){
         },
 
         format: 'dd/mm/yyyy',
-        maxDate: new Date(data.getFullYear(), data.getMonth(), data.getDay()),
+        maxDate: new Date(),
     });
 });
 

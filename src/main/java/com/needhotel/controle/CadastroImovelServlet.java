@@ -4,7 +4,7 @@ import com.needhotel.modelo.dao.implementacao.ImovelDaoImpl;
 import com.needhotel.modelo.domain.Imovel;
 import com.needhotel.modelo.domain.Usuario;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import sun.plugin.javascript.navig.Array;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -13,8 +13,6 @@ import javax.servlet.http.*;
 import java.io.File;
 import java.io.IOException;
 import java.time.ZonedDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @WebServlet("/cadastrarImovel")
 @MultipartConfig

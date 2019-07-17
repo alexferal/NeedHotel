@@ -10,7 +10,7 @@ public class ConnectionFactory {
 
     public static String user = "postgres";
 
-    public static String password = "1234";
+    public static String password = "nqa5799";
 
     public Connection getConnection() {
         Connection connection = null;

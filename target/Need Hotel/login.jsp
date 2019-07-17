@@ -31,13 +31,7 @@
                 <label class="black-text center">Ainda não possui uma conta? <a href="cadastrar">Cadastre-se!</a></label>
             </div>
         </main>
-
-        <footer class="page-footer black">
-            <div class="footer-copyright">
-                <label id="CopyRight" class="white-text">© 2019 NeedHotel - Todos os direitos reservados.</label>
-            </div>
-        </footer>
-
+        <c:import url="rodape.jsp"></c:import>
 
 
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
