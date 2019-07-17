@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="needHotel@localhost" uuid="cc6bddde-339f-4d92-969e-dcd8b3352f03">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
-      <introspection-schemas>@:@</introspection-schemas>
+    <data-source name="postgres@localhost" uuid="ad6c86a2-22d0-4d9d-9ea6-e07c1e1d3c1b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
     </data-source>
   </component>
 </project>

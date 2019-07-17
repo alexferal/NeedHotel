@@ -51,7 +51,6 @@ public class CadastroImovelServlet extends HttpServlet {
                 String[] lista = req.getParameterValues("comidadesImovel");
 
                 if (ServletFileUpload.isMultipartContent(req)){
-
                     //Atribui a String o diretorio padrão onde as fotos serão armazenadas
                     String uploadPath = getServletContext().getRealPath("") + File.separator + "imagem";
                     File uploadDir = new File(uploadPath);
