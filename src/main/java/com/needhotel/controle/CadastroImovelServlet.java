@@ -5,7 +5,6 @@ import com.needhotel.modelo.domain.Imovel;
 import com.needhotel.modelo.domain.Usuario;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
