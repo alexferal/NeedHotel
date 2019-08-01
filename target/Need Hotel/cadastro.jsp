@@ -80,7 +80,7 @@
                                 <input required type="file" name="foto" id="foto" accept="image/*">
                             </div>
                             <div class="file-path-wrapper">
-                                <input required class="file-path validate" type="text" placeholder="Faça o upload das fotos do imóvel aqui">
+                                <input required name="foto" class="file-path validate" type="text" placeholder="Faça o upload das fotos do imóvel aqui">
                             </div>
                         </div>
                         <div class="input-field col s12">
@@ -102,7 +102,7 @@
                     </div>
                     <div class="modal-footer center">
                         <a href="cadastro.jsp?etapaForm=1" class="modal-close waves-effect waves-green btn-flat">Voltar</a>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar</button>
+                        <button class="btn waves-effect waves-light" type="submit" name="action" id="cadastrar">Cadastrar</button>
                     </div>
                 </form>
             </c:if>
