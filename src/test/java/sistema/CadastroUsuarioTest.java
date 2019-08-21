@@ -1,3 +1,5 @@
+import com.needhotel.modelo.dao.implementacao.UsuarioDaoImpl;
+import com.needhotel.modelo.domain.Usuario;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -7,10 +9,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.LocalDate;
+
 import static org.junit.Assert.*;
 
 public class CadastroUsuarioTest {
     private static WebDriver driver;
+    private UsuarioDaoImpl usuarioDao;
 
     @BeforeClass
     public static void setUpTest(){
@@ -66,5 +71,12 @@ public class CadastroUsuarioTest {
         Thread.sleep(2000L);
         element = driver.findElement(By.id("register"));
         assertNotNull(element);
+    }
+
+    @Test
+    public void CadastroUsuarioCpfCadastrado(){
+        usuarioDao.cadastrarUsuario(new Usuario("222.222.222.02", "Alex", "Fernandes", "(83)99502-8557", LocalDate.now(), "alex@teste.com", "4321", "perfil.jpg"));
+
+
     }
 }
